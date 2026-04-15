@@ -1,0 +1,155 @@
+.footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 80px 0 30px;
+  margin-top: 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 60px;
+}
+
+.brandCol .logo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 24px;
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.logoAccent {
+  color: var(--accent);
+}
+
+.mission {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  max-width: 300px;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+}
+
+.linksCol h3, .contactCol h3 {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  color: white;
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.linksCol ul {
+  list-style: none;
+}
+
+.linksCol li {
+  margin-bottom: 12px;
+}
+
+.linksCol a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.linksCol a:hover {
+  color: white;
+  padding-left: 5px;
+}
+
+.contactCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactItem {
+  display: flex;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.bottom {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.legal {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.legal a:hover {
+  color: white;
+}
+
+.trustBadge {
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 60px 0 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .legal {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
