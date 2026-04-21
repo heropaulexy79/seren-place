@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import Button from "../ui/Button";
+import CareAssessmentModal from "../ui/CareAssessmentModal";
 import styles from "./HeroSlider.module.css";
 
 const slides = [
@@ -12,8 +13,8 @@ const slides = [
     image: "file:///C:/Users/HP/.gemini/antigravity/brain/0bc5bbd9-4e43-4a90-8aaa-238501469490/hero_slide_compassion_1776264463664.png",
     title: "Compassionate Care for Your Loved Ones",
     subtitle: "We provide the kind of heartfelt support that treats your family like our own.",
-    cta: "Book Free Consultation",
-    link: "/contact"
+    cta: "Take Care Assessment",
+    isAssessment: true
   },
   {
     image: "file:///C:/Users/HP/.gemini/antigravity/brain/0bc5bbd9-4e43-4a90-8aaa-238501469490/hero_slide_joy_1776264524902.png",
@@ -40,6 +41,7 @@ const slides = [
 
 const HeroSlider = () => {
   const [current, setCurrent] = useState(0);
+  const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -82,10 +84,16 @@ const HeroSlider = () => {
               <h1 className={styles.title}>{slides[current].title}</h1>
               <p className={styles.subtitle}>{slides[current].subtitle}</p>
               <div className={styles.actions}>
-                <Button variant="accent" href={slides[current].link}>
-                  {slides[current].cta}
-                </Button>
-                <Button variant="outline" href="/about">
+                {slides[current].isAssessment ? (
+                  <Button variant="accent" onClick={() => setIsAssessmentOpen(true)}>
+                    {slides[current].cta}
+                  </Button>
+                ) : (
+                  <Button variant="accent" href={slides[current].link}>
+                    {slides[current].cta}
+                  </Button>
+                )}
+                <Button variant="outlineWhite" href="/about">
                   Why Choose Us
                 </Button>
               </div>
@@ -114,6 +122,12 @@ const HeroSlider = () => {
           <ChevronRight size={24} />
         </button>
       </div>
+
+      {/* Assessment Modal */}
+      <CareAssessmentModal 
+        isOpen={isAssessmentOpen} 
+        onClose={() => setIsAssessmentOpen(false)} 
+      />
     </div>
   );
 };

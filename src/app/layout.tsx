@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ChatWidget from "@/components/ui/ChatWidget";
 
 export default function RootLayout({
   children,
@@ -31,6 +32,7 @@ export default function RootLayout({
        <body style={{ fontFamily: "var(--font-inter), sans-serif" }}>
         <Navbar />
         <main>{children}</main>
+        <ChatWidget />
         <Footer />
       </body>
     </html>
