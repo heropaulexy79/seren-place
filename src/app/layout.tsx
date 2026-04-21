@@ -14,7 +14,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Seren Place | Premium Home Healthcare Agency",
-  description: "Experience premium, compassionate, and family-centered home care. Specialized in senior care, dementia care, and companionship to ensure peace of mind for your loved ones.",
+  description: "Experience premium, compassionate, and family-centered home care. Specialized in senior care, dementia care, and companionship to ensure peace of mind for your loved ones always.",
   keywords: ["home healthcare", "senior care", "dementia care", "Alzheimer's care", "in-home care", "respite care"],
 };
 
