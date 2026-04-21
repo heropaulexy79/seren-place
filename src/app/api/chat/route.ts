@@ -8,9 +8,12 @@ const groq = apiKey ? new Groq({ apiKey }) : null;
 const SYSTEM_PROMPT = `
 You are an empathetic, professional Care Concierge AI for Seren Place, a premium home healthcare agency. 
 Your goal is to reassure families, answer basic questions about home healthcare, and encourage them to book a consultation or speak with a Care Coordinator.
-Keep responses concise, warm, and professional. 
-Do NOT provide medical advice or diagnoses under any circumstances.
-If a user shares complex or urgent needs, kindly advise that a Care Coordinator will reach out via email shortly to assist them fully.
+
+Key Guidelines:
+- Keep responses concise, warm, and professional. 
+- Do NOT provide medical advice or diagnoses under any circumstances.
+- If a user shares complex or urgent needs, kindly advise that a Care Coordinator will reach out via email shortly to assist them fully.
+- Always maintain a tone of care and support.
 `;
 
 export async function POST(req: Request) {
@@ -23,10 +26,11 @@ export async function POST(req: Request) {
     }
 
     if (!apiKey || !groq) {
-      console.warn("No GROQ_API_KEY provided. Using fallback response.");
-      return NextResponse.json({ 
-        reply: "Thank you for sharing. A Care Coordinator has securely received your message and will reach out via email shortly to assist you further. (Note: Please add GROQ_API_KEY to your .env file to enable the live AI Concierge)." 
-      });
+      console.error("GROQ_API_KEY is missing from environment variables.");
+      return NextResponse.json(
+        { reply: "I'm currently unable to connect. Please contact us directly at contact@serenplace.com or wait for a Care Coordinator to reach out." },
+        { status: 503 }
+      );
     }
 
     // Format messages for Groq
@@ -40,8 +44,6 @@ export async function POST(req: Request) {
     ];
 
     try {
-      console.log(`Using Groq model: llama-3.3-70b-versatile...`);
-      
       const chatCompletion = await groq.chat.completions.create({
         messages: messages as any,
         model: "llama-3.3-70b-versatile",
@@ -54,24 +56,22 @@ export async function POST(req: Request) {
       const responseText = chatCompletion.choices[0]?.message?.content || "";
       
       if (responseText) {
-        console.log(`Successfully received Groq response`);
         return NextResponse.json({ reply: responseText });
       } else {
         throw new Error("Empty response from Groq");
       }
     } catch (err: any) {
       console.error('Groq API Error:', err.message);
-      throw err;
+      return NextResponse.json(
+        { reply: "I'm having trouble processing your request right now. A Care Coordinator will reach out via email shortly." },
+        { status: 500 }
+      );
     }
     
   } catch (error: any) {
-    console.error('--- Chat API Error Detail ---');
-    console.error('Message:', error.message);
-    
+    console.error('Chat API Error:', error.message);
     return NextResponse.json(
-      { 
-        reply: "I'm currently experiencing some technical difficulties. A Care Coordinator will reach out via email shortly to assist you." 
-      },
+      { reply: "An unexpected error occurred. A Care Coordinator will reach out to assist you." },
       { status: 500 }
     );
   }

@@ -2,10 +2,15 @@
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  z-index: 1000;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  pointer-events: none; /* Let clicks pass through empty space */
+}
+
+.widgetContainer > * {
+  pointer-events: auto; /* Re-enable clicks for children */
 }
 
 .chatButton {
@@ -20,18 +25,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
 .chatButton:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.05);
   background: var(--color-gold-dark, #c59738);
+  box-shadow: 0 15px 30px rgba(220, 168, 66, 0.5);
 }
 
 .chatButton:focus-visible {
   outline: 3px solid var(--color-navy);
   outline-offset: 2px;
+}
+
+.aiLabel {
+  position: absolute;
+  right: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: var(--color-navy);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--color-slate-100);
+  opacity: 0.9;
+}
+
+.aiLabel span {
+  color: var(--color-gold);
 }
 
 .badge {
@@ -46,11 +76,12 @@
 }
 
 .chatWindow {
-  width: 350px;
-  max-height: 500px;
+  width: 380px;
+  max-height: 600px;
+  height: 70vh;
   background: white;
-  border-radius: 1rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
@@ -64,21 +95,24 @@
   padding: 1.25rem;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .headerInfo h3 {
-  margin: 0 0 0.25rem 0;
-  font-size: 1.1rem;
-  font-weight: 600;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: white;
 }
 
 .headerStatus {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-slate-300);
+  margin-top: 0.25rem;
 }
 
 .statusDot {
@@ -86,66 +120,98 @@
   height: 8px;
   background: var(--color-green-400, #4ade80);
   border-radius: 50%;
+  box-shadow: 0 0 8px var(--color-green-400);
+}
+
+.aiBadge {
+  background: rgba(220, 168, 66, 0.15);
+  color: var(--color-gold);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 700;
+  border: 1px solid rgba(220, 168, 66, 0.3);
+  text-transform: uppercase;
 }
 
 .closeButton {
-  background: none;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   color: white;
-  opacity: 0.7;
   cursor: pointer;
-  transition: opacity 0.2s;
-  padding: 0.25rem;
+  transition: all 0.2s;
+  padding: 0.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.closeButton:hover,
-.closeButton:focus-visible {
-  opacity: 1;
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
 }
 
 .hipaaBadge {
-  background: rgba(255, 255, 255, 0.1);
-  font-size: 0.7rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  margin-top: 0.5rem;
+  display: none; /* Moved to footer or made more subtle */
 }
 
 .messagesArea {
   flex: 1;
-  padding: 1.25rem;
+  padding: 1.5rem;
   overflow-y: auto;
   background: var(--color-slate-50);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  min-height: 250px;
+  gap: 1.25rem;
+}
+
+.messageWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+}
+
+.messageWrapperAi {
+  align-self: flex-start;
+}
+
+.messageWrapperUser {
+  align-self: flex-end;
 }
 
 .message {
-  max-width: 85%;
-  padding: 0.75rem 1rem;
-  border-radius: 1rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  padding: 0.85rem 1.1rem;
+  border-radius: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  position: relative;
 }
 
 .messageAi {
   background: white;
   border: 1px solid var(--color-slate-200);
-  align-self: flex-start;
   border-bottom-left-radius: 0.25rem;
-  color: var(--color-slate-700);
+  color: var(--color-slate-800);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .messageUser {
   background: var(--color-navy);
   color: white;
-  align-self: flex-end;
   border-bottom-right-radius: 0.25rem;
+  box-shadow: 0 4px 10px rgba(10, 37, 64, 0.15);
+}
+
+.timestamp {
+  font-size: 0.65rem;
+  color: var(--color-slate-400);
+  margin-top: 0.35rem;
+  display: block;
+}
+
+.messageWrapperUser .timestamp {
+  text-align: right;
 }
 
 .messageTyping {
@@ -157,6 +223,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .typingDot {
@@ -181,51 +248,57 @@
 }
 
 .inputArea {
-  padding: 1rem;
+  padding: 1.25rem;
   background: white;
-  border-top: 1px solid var(--color-slate-200);
+  border-top: 1px solid var(--color-slate-100);
 }
 
 .form {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  align-items: center;
 }
 
 .input {
   flex: 1;
-  padding: 0.75rem;
-  border: 1px solid var(--color-slate-300);
+  padding: 0.85rem 1.25rem;
+  border: 1.5px solid var(--color-slate-200);
   border-radius: 2rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   outline: none;
   font-family: inherit;
-  transition: border-color 0.2s;
+  transition: all 0.2s;
 }
 
 .input:focus {
   border-color: var(--color-gold);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(220, 168, 66, 0.1);
 }
 
 .sendButton {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  background: var(--color-gold);
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background: var(--color-navy);
   color: white;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
+  flex-shrink: 0;
 }
 
 .sendButton:hover:not(:disabled) {
-  background: var(--color-gold-dark, #c59738);
+  background: var(--color-gold);
+  transform: scale(1.05);
 }
 
 .sendButton:disabled {
-  background: var(--color-slate-300);
+  background: var(--color-slate-200);
+  color: var(--color-slate-400);
   cursor: not-allowed;
 }
 
@@ -233,17 +306,62 @@
   text-align: center;
   font-size: 0.7rem;
   color: var(--color-slate-400);
-  margin-top: 0.75rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.disclaimerIcon {
+  color: var(--color-green-500);
 }
 
 @media (max-width: 640px) {
   .widgetContainer {
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .chatButton {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    position: fixed;
+    z-index: 10000;
+  }
+
+  .aiLabel {
+    right: 90px;
+    bottom: 1.5rem;
+    top: auto;
+    transform: none;
   }
   
   .chatWindow {
-    width: calc(100vw - 2rem);
-    max-height: 400px;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+    margin-bottom: 0;
+    border: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+  }
+
+  .header {
+    padding: 1.5rem;
+    border-radius: 0;
+  }
+
+  .messagesArea {
+    padding: 1.5rem 1rem;
+  }
+
+  .inputArea {
+    padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
   }
 }
