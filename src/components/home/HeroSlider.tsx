@@ -54,7 +54,7 @@ const HeroSlider = () => {
   const prevSlide = () => setCurrent(current === 0 ? slides.length - 1 : current - 1);
 
   return (
-    <div className={styles.slider}>
+    <section className={styles.slider} aria-label="Hero Spotlight">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}

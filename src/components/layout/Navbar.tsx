@@ -71,26 +71,33 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar - Sticky */}
-      <nav className={styles.navbar}>
+      <nav className={styles.navbar} aria-label="Main Navigation">
         <div className={`container ${styles.navContainer}`}>
           {/* Logo */}
-          <Link href="/" className={styles.logo}>
+          <Link href="/" className={styles.logo} aria-label="Seren Place Home">
             <span className={styles.logoText}>Seren </span>
             <span className={styles.logoAccent}>Place</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className={styles.navLinks}>
+          <ul className={styles.navLinks} role="menubar">
             {navLinks.map((link) => (
               <li
                 key={link.name}
                 className={styles.navItem}
                 onMouseEnter={() => setActiveDropdown(link.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
+                role="none"
               >
-                <Link href={link.href} className={styles.navLink}>
+                <Link 
+                  href={link.href} 
+                  className={styles.navLink}
+                  role="menuitem"
+                  aria-haspopup={link.dropdown ? "true" : "false"}
+                  aria-expanded={activeDropdown === link.name}
+                >
                   {link.name}
-                  {link.dropdown && <ChevronDown size={14} className={styles.chevron} />}
+                  {link.dropdown && <ChevronDown size={14} className={styles.chevron} aria-hidden="true" />}
                 </Link>
 
                 {link.dropdown && (
@@ -101,10 +108,12 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         className={styles.dropdown}
+                        role="menu"
+                        aria-label={`${link.name} submenu`}
                       >
                         {link.dropdown.map((item) => (
-                          <li key={item.name}>
-                            <Link href={item.href} className={styles.dropdownItem}>
+                          <li key={item.name} role="none">
+                            <Link href={item.href} className={styles.dropdownItem} role="menuitem">
                               {item.name}
                             </Link>
                           </li>
@@ -122,11 +131,13 @@ const Navbar = () => {
             <Button variant="accent" href="/contact">Book Now</Button>
           </div>
 
-
           {/* Mobile Toggle */}
           <button
             className={styles.mobileToggle}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -136,10 +147,14 @@ const Navbar = () => {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
+              id="mobile-menu"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               className={styles.mobileMenu}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile Navigation Menu"
             >
               <div className="container">
                 <ul className={styles.mobileLinks}>

@@ -24,6 +24,7 @@ export default function ChatWidget() {
   ]);
   const [inputVal, setInputVal] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [hasUnread, setHasUnread] = useState(true);
   const [isTyping, setIsTyping] = useState(false);
 
@@ -35,8 +36,16 @@ export default function ChatWidget() {
     if (isOpen) {
       scrollToBottom();
       setHasUnread(false);
+      // Accessibility: Focus the input when the chat opens
+      inputRef.current?.focus();
     }
-  }, [messages, isOpen, isTyping]);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (messages.length > 0 || isTyping) {
+      scrollToBottom();
+    }
+  }, [messages, isTyping]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -130,7 +139,12 @@ export default function ChatWidget() {
               </button>
             </div>
 
-            <div className={styles.messagesArea}>
+            <div 
+              className={styles.messagesArea} 
+              aria-live="polite" 
+              role="log" 
+              aria-relevant="additions"
+            >
               {messages.map((msg) => (
                 <div 
                   key={msg.id} 
@@ -147,7 +161,7 @@ export default function ChatWidget() {
                 </div>
               ))}
               {isTyping && (
-                <div className={styles.messageTyping}>
+                <div className={styles.messageTyping} aria-label="Assistant is typing">
                   <div className={styles.typingDot} />
                   <div className={styles.typingDot} />
                   <div className={styles.typingDot} />
@@ -159,6 +173,7 @@ export default function ChatWidget() {
             <div className={styles.inputArea}>
               <form onSubmit={handleSubmit} className={styles.form}>
                 <input
+                  ref={inputRef}
                   type="text"
                   value={inputVal}
                   onChange={(e) => setInputVal(e.target.value)}
@@ -176,7 +191,7 @@ export default function ChatWidget() {
                 </button>
               </form>
               <div className={styles.disclaimer}>
-                <ShieldCheck size={12} className={styles.disclaimerIcon} />
+                <ShieldCheck size={12} className={styles.disclaimerIcon} aria-hidden="true" />
                 HIPAA Secure & AI Powered
               </div>
             </div>
@@ -192,6 +207,7 @@ export default function ChatWidget() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 10 }}
               className={styles.aiLabel}
+              aria-hidden="true"
             >
               <span><Sparkles size={14} /></span> AI Assistant
             </motion.div>
@@ -200,7 +216,9 @@ export default function ChatWidget() {
         <button
           className={styles.chatButton}
           onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? "Close chat" : "Open chat"}
+          aria-label={isOpen ? "Close chat" : "Open Seren Place AI Assistant"}
+          aria-expanded={isOpen}
+          aria-haspopup="dialog"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -213,7 +231,7 @@ export default function ChatWidget() {
               {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
             </motion.div>
           </AnimatePresence>
-          {!isOpen && hasUnread && <span className={styles.badge} />}
+          {!isOpen && hasUnread && <span className={styles.badge} aria-label="Unread messages" />}
         </button>
       </div>
     </div>
