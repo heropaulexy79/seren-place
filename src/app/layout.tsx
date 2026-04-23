@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
 import "./globals.css";
-
-const lato = Lato({
-  variable: "--font-lato",
-  subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Seren Place | Premium Home Healthcare Agency",
@@ -63,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={lato.variable}>
+    <html lang="en">
       <body style={{ fontFamily: "var(--font-lato), sans-serif" }}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <StructuredData />
