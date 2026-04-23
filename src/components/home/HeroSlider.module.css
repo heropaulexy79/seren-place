@@ -2,9 +2,9 @@
   position: relative;
   width: 100%;
   height: 90vh;
-  min-height: 600px;
+  min-height: 650px;
   overflow: hidden;
-  background-color: var(--primary);
+  background-color: var(--secondary-dark);
 }
 
 .slide {
@@ -39,13 +39,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(var(--primary-rgb), 0.8) 0%,
-    rgba(var(--primary-rgb), 0.4) 50%,
-    rgba(var(--primary-rgb), 0.1) 100%
-  );
-
+  background: var(--overlay-hero-left);
   z-index: 2;
 }
 
@@ -53,101 +47,110 @@
   position: relative;
   z-index: 3;
   width: 100%;
-  padding-top: 100px; /* To clear the sticky header */
+  padding-top: 100px;
 }
 
-
 .textColumn {
-  max-width: 650px;
+  max-width: 700px;
   color: white;
 }
 
 .title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
   color: white;
   margin-bottom: 24px;
-  line-height: 1.1;
-  font-family: var(--font-outfit), sans-serif;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-family: var(--font-lato), sans-serif;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 40px;
-  max-width: 550px;
-  font-weight: 500;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  color: var(--text-on-dark);
+  margin-bottom: 48px;
+  max-width: 600px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .actions {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .controls {
   position: absolute;
-  bottom: 40px;
+  bottom: 50px;
   left: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 48px;
   z-index: 10;
 }
 
 .controlBtn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+  transition: all var(--transition-mid);
+  backdrop-filter: blur(8px);
 }
 
 .controlBtn:hover {
   background: white;
   color: var(--primary);
-  transform: scale(1.1);
+  transform: scale(1.15);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
 .dots {
   display: flex;
-  gap: 12px;
+  gap: 14px;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-mid);
 }
 
 .activeDot {
   background: var(--accent);
-  width: 30px;
-  border-radius: 10px;
+  width: 32px;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.5);
 }
 
+@media (max-width: 1024px) {
+  .textColumn {
+     max-width: 600px;
+  }
+}
 
 @media (max-width: 768px) {
-  .height {
-    height: 80vh;
+  .slider {
+    height: 85vh;
   }
 
   .textColumn {
     text-align: center;
     margin: 0 auto;
+    padding: 0 20px;
   }
 
   .actions {
@@ -157,11 +160,10 @@
   }
 
   .overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--primary-rgb), 0.7) 0%,
-      rgba(var(--primary-rgb), 0.8) 100%
-    );
+    background: var(--overlay-hero-dark);
+  }
 
+  .controls {
+     bottom: 40px;
   }
 }

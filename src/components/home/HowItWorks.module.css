@@ -1,59 +1,70 @@
 .section {
-  background-color: white;
+  background-color: var(--bg-white);
+  position: relative;
 }
 
 .header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 60px;
+  margin: 0 auto 80px;
 }
 
 .title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-family: var(--font-outfit), sans-serif;
-  color: var(--primary);
-  margin-bottom: 20px;
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--secondary);
+  margin-bottom: 24px;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--text-muted);
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 48px;
+  position: relative;
 }
 
 .step {
   text-align: center;
   position: relative;
+  z-index: 2;
 }
 
 .iconWrapper {
-  width: 80px;
-  height: 80px;
-  background-color: var(--bg-warm);
-  color: var(--secondary);
+  width: 90px;
+  height: 90px;
+  background-color: var(--teal-50);
+  color: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 30px;
+  margin: 0 auto 32px;
   position: relative;
   z-index: 2;
   border: 4px solid white;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-mid);
+}
+
+.step:hover .iconWrapper {
+  background: var(--gradient-primary);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: var(--shadow-teal);
 }
 
 .line {
   position: absolute;
-  top: 50%;
-  left: 100%;
+  top: 45px;
+  left: 50%;
   width: 100%;
-  height: 2px;
-  background-color: var(--bg-warm);
+  height: 3px;
+  background: var(--neutral-100);
   z-index: 1;
 }
 
@@ -62,20 +73,23 @@
 }
 
 .step h3 {
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+  font-weight: 800;
   margin-bottom: 12px;
-  font-family: var(--font-outfit), sans-serif;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .step p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-muted);
+  line-height: 1.5;
+  padding: 0 10px;
 }
 
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
   }
   
   .line {
@@ -86,6 +100,6 @@
 @media (max-width: 640px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 56px;
   }
 }

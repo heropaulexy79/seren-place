@@ -10,28 +10,28 @@ import styles from "./HeroSlider.module.css";
 
 const slides = [
   {
-    image: "file:///C:/Users/HP/.gemini/antigravity/brain/0bc5bbd9-4e43-4a90-8aaa-238501469490/hero_slide_compassion_1776264463664.png",
+    image: "/images/hero/hero_compassion.png",
     title: "Compassionate Care for Your Loved Ones",
     subtitle: "We provide the kind of heartfelt support that treats your family like our own.",
     cta: "Take Care Assessment",
     isAssessment: true
   },
   {
-    image: "file:///C:/Users/HP/.gemini/antigravity/brain/0bc5bbd9-4e43-4a90-8aaa-238501469490/hero_slide_joy_1776264524902.png",
+    image: "/images/hero/hero_joy.png",
     title: "Bringing Joy and Independence Home",
     subtitle: "Professional care that empowers seniors to live fulfilling, vibrant lives in the comfort of home.",
     cta: "Our Services",
     link: "/services"
   },
   {
-    image: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/hero/hero_dementia_care.png",
     title: "Specialized Dementia & Alzheimer's Care",
     subtitle: "Trained professionals focused on safety, engagement, and emotional well-being.",
     cta: "Learn More",
     link: "/services/dementia-care"
   },
   {
-    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2043&auto=format&fit=crop",
+    image: "/images/hero/hero_peace_of_mind.png",
     title: "Peace of Mind for the Entire Family",
     subtitle: "Relieving the burden of caregiving with reliable, licensed, and insured support.",
     cta: "Join Our Team",
