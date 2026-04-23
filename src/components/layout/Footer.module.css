@@ -16,16 +16,12 @@
 .brandCol .logo {
   display: flex;
   align-items: center;
-  gap: 2px;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: white;
+  line-height: 0;
   margin-bottom: 24px;
-  font-family: var(--font-outfit), sans-serif;
 }
 
-.logoAccent {
-  color: var(--accent);
+.logoImg {
+  filter: brightness(0) invert(1); /* Makes the logo white on the dark footer */
 }
 
 .mission {
@@ -60,7 +56,8 @@
   font-size: 1.2rem;
   margin-bottom: 24px;
   color: white;
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-lato), sans-serif;
+  font-weight: 700;
 }
 
 .linksCol ul {

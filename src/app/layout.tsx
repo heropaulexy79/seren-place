@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const lato = Lato({
+  variable: "--font-lato",
   subsets: ["latin"],
-});
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -66,8 +63,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
-      <body style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+    <html lang="en" className={lato.variable}>
+      <body style={{ fontFamily: "var(--font-lato), sans-serif" }}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <StructuredData />
         <Navbar />

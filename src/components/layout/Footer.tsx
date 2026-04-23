@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import styles from "./Footer.module.css";
 
@@ -13,7 +14,14 @@ const Footer = () => {
           {/* Brand & Mission */}
           <div className={styles.brandCol}>
             <Link href="/" className={styles.logo}>
-              <span>Seren</span><span className={styles.logoAccent}>Place</span>
+              <Image
+                src="/logo.png"
+                alt="Seren Place"
+                width={150}
+                height={44}
+                style={{ objectFit: "contain" }}
+                className={styles.logoImg}
+              />
             </Link>
             <p className={styles.mission}>
               Premium, family-centered care designed to bring peace of mind and professional support to your doorstep.

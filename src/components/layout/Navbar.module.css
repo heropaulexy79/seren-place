@@ -63,15 +63,7 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 2px;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--primary);
-  font-family: var(--font-outfit), sans-serif;
-}
-
-.logoAccent {
-  color: var(--accent);
+  line-height: 0;
 }
 
 

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Phone, Menu, X, Mail, MapPin } from "lucide-react";
 import Button from "../ui/Button";
@@ -75,8 +76,14 @@ const Navbar = () => {
         <div className={`container ${styles.navContainer}`}>
           {/* Logo */}
           <Link href="/" className={styles.logo} aria-label="Seren Place Home">
-            <span className={styles.logoText}>Seren </span>
-            <span className={styles.logoAccent}>Place</span>
+            <Image
+              src="/logo.png"
+              alt="Seren Place — Compassionate Care for Your Loved Ones"
+              width={160}
+              height={48}
+              style={{ objectFit: "contain" }}
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
