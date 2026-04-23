@@ -128,7 +128,7 @@ const HeroSlider = () => {
         isOpen={isAssessmentOpen} 
         onClose={() => setIsAssessmentOpen(false)} 
       />
-    </div>
+    </section>
   );
 };
 
