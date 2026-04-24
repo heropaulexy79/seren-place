@@ -17,7 +17,7 @@ const AboutOverview = () => {
           <div className={styles.floatingCard}>
             <Heart className={styles.heartIcon} />
             <div>
-              <strong>15+ Years</strong>
+              <strong>2+ Years</strong>
               <span>of Heartfelt Care</span>
             </div>
           </div>
