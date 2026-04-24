@@ -9,17 +9,8 @@ import Button from "../ui/Button";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -48,7 +39,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={`${styles.headerWrapper} ${isScrolled ? styles.scrolled : ""}`}>
+    <header className={styles.headerWrapper}>
       {/* TopBar - Disappears on scroll */}
       <div className={styles.topBar}>
         <div className={`container ${styles.topBarContainer}`}>
