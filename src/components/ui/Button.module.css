@@ -33,50 +33,22 @@
   outline-offset: 3px;
 }
 
-/* Primary — Teal gradient */
-.primary {
-  background: var(--gradient-primary);
+/* Primary — Premium Teal gradient (as seen in "Learn Our Story") */
+.primary, .secondary, .accent {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: white;
   border-color: transparent;
-  box-shadow: var(--shadow-teal);
+  box-shadow: 0 10px 25px rgba(var(--primary-rgb), 0.25);
+  font-weight: 700;
 }
 
-.primary:hover {
-  box-shadow: var(--shadow-xl);
-  transform: translateY(-3px);
-  filter: brightness(1.08);
-}
-
-/* Secondary — Navy gradient */
-.secondary {
-  background: var(--gradient-secondary);
-  color: white;
-  border-color: transparent;
-  box-shadow: 0 8px 24px rgba(var(--secondary-rgb), 0.25);
-}
-
-.secondary:hover {
-  box-shadow: 0 20px 50px rgba(var(--secondary-rgb), 0.30);
+.primary:hover, .secondary:hover, .accent:hover {
+  box-shadow: 0 15px 35px rgba(var(--primary-rgb), 0.35);
   transform: translateY(-3px);
   filter: brightness(1.1);
 }
 
-/* Accent — Bright teal (for hero CTAs) */
-.accent {
-  background: var(--accent);
-  color: var(--secondary);
-  border-color: transparent;
-  box-shadow: var(--shadow-accent);
-  font-weight: 800;
-}
-
-.accent:hover {
-  background: var(--accent-light);
-  box-shadow: 0 16px 40px rgba(var(--accent-rgb), 0.40);
-  transform: translateY(-3px);
-}
-
-/* Outline — teal border */
+/* Outline — Teal border (as seen in "Book a Visit") */
 .outline {
   background-color: transparent;
   color: var(--primary);
@@ -84,24 +56,36 @@
 }
 
 .outline:hover {
-  background: var(--primary);
-  color: white;
-  box-shadow: var(--shadow-teal);
+  background: rgba(var(--primary-rgb), 0.04);
+  color: var(--primary-dark);
+  border-color: var(--primary-dark);
   transform: translateY(-2px);
 }
 
-/* Outline White — for dark backgrounds */
+/* White Variants — For dark backgrounds */
+.solidWhite {
+  background: white;
+  color: var(--primary);
+  border-color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+}
+
+.solidWhite:hover {
+  background: var(--teal-50);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
 .outlineWhite {
   background-color: transparent;
   color: white;
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: white;
 }
 
 .outlineWhite:hover {
-  background-color: white;
-  color: var(--secondary);
-  border-color: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {

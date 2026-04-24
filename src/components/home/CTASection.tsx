@@ -12,7 +12,7 @@ const CTASection = () => {
             Ready to experience the Seren Place difference? Speak with one of our care experts today for a free, no-obligation consultation.
           </p>
           <div className={styles.actions}>
-            <Button variant="primary" href="/contact">Book Free Consultation</Button>
+            <Button variant="solidWhite" href="/contact">Book Free Consultation</Button>
             <a href="tel:+1800SERENITY" className={styles.phoneLink}>
               Or call (800) SERENITY
             </a>

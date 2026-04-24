@@ -10,8 +10,8 @@ const AboutOverview = () => {
         <div className={styles.imageCol}>
           <div className={styles.imageDecoration} />
           <img 
-            src="https://images.unsplash.com/photo-1573164060897-425983c79440?q=80&w=2069&auto=format&fit=crop" 
-            alt="Compassionate home care" 
+            src="/images/about_overview.png" 
+            alt="Compassionate home care — The Seren Way" 
             className={styles.mainImage}
           />
           <div className={styles.floatingCard}>

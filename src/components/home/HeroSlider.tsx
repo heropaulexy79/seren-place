@@ -85,11 +85,11 @@ const HeroSlider = () => {
               <p className={styles.subtitle}>{slides[current].subtitle}</p>
               <div className={styles.actions}>
                 {slides[current].isAssessment ? (
-                  <Button variant="accent" onClick={() => setIsAssessmentOpen(true)}>
+                  <Button variant="primary" onClick={() => setIsAssessmentOpen(true)}>
                     {slides[current].cta}
                   </Button>
                 ) : (
-                  <Button variant="accent" href={slides[current].link}>
+                  <Button variant="primary" href={slides[current].link}>
                     {slides[current].cta}
                   </Button>
                 )}

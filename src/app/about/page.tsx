@@ -77,7 +77,7 @@ export default function AboutPage() {
             <p>Whether you're looking for help for a loved one or want to start a career in care, we're here for you.</p>
             <div className={styles.ctaActions}>
               <Button variant="primary" href="/contact">Book Consultation</Button>
-              <Button variant="secondary" href="/careers">Join Our Team</Button>
+              <Button variant="outline" href="/careers">Join Our Team</Button>
             </div>
           </div>
         </div>

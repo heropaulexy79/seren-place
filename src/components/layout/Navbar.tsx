@@ -135,7 +135,7 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className={styles.navActions}>
-            <Button variant="accent" href="/contact">Book Now</Button>
+            <Button variant="primary" href="/contact">Book Now</Button>
           </div>
 
           {/* Mobile Toggle */}

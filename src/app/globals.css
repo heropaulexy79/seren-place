@@ -265,16 +265,16 @@ input:focus-visible {
 }
 
 .btn-primary {
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: white;
   border: none;
-  box-shadow: var(--shadow-teal);
+  box-shadow: 0 10px 25px rgba(var(--primary-rgb), 0.25);
 }
 
 .btn-primary:hover {
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 15px 35px rgba(var(--primary-rgb), 0.35);
   transform: translateY(-3px);
-  filter: brightness(1.06);
+  filter: brightness(1.1);
 }
 
 .btn-secondary {
@@ -284,10 +284,10 @@ input:focus-visible {
 }
 
 .btn-secondary:hover {
-  background: var(--primary);
-  color: white;
+  background: rgba(var(--primary-rgb), 0.04);
+  color: var(--primary-dark);
+  border-color: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-teal);
 }
 
 /* Forms */

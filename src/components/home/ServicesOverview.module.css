@@ -28,11 +28,50 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  width: 100%;
+}
+
+.sliderWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0 -60px;
+  padding: 0 60px;
+}
+
+.sliderWindow {
+  flex-grow: 1;
+  overflow: hidden;
+  padding: 20px 0 40px;
+}
+
+.navBtn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--primary);
+  transition: all var(--transition-mid);
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.navBtn:hover {
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+  transform: scale(1.1);
 }
 
 .card {
   background: white;
-  padding: 48px 40px;
   border-radius: var(--radius-xl);
   transition: all var(--transition-slow);
   border: 1px solid var(--border);
@@ -41,77 +80,83 @@
   box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.imageBox {
+  position: relative;
   width: 100%;
-  height: 4px;
-  background: var(--gradient-accent-band);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-mid);
+  aspect-ratio: 4/3;
+  overflow: hidden;
 }
 
-.card:hover {
-  transform: translateY(-12px);
-  border-color: var(--teal-100);
-  box-shadow: var(--shadow-2xl);
+.imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
 }
 
-.card:hover::before {
-  transform: scaleX(1);
-}
-
-.iconWrapper {
-  width: 72px;
-  height: 72px;
-  background-color: var(--teal-50);
+.iconTag {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: var(--bg-white);
   color: var(--primary);
-  border-radius: 20px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 32px;
-  transition: all var(--transition-mid);
+  box-shadow: var(--shadow-md);
+  z-index: 2;
 }
 
-.card:hover .iconWrapper {
-  background: var(--gradient-primary);
-  color: white;
-  transform: rotate(10deg) scale(1.1);
-  box-shadow: var(--shadow-teal);
+.cardBody {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--teal-200);
+  box-shadow: var(--shadow-xl);
+}
+
+.card:hover .imageBox img {
+  transform: scale(1.1);
 }
 
 .card h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   color: var(--secondary);
   letter-spacing: -0.01em;
 }
 
 .card p {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.6;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   flex-grow: 1;
 }
 
 .learnMore {
   font-weight: 800;
   color: var(--primary);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 8px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: gap var(--transition-fast);
+  margin-top: auto;
 }
 
 .card:hover .learnMore {
@@ -120,7 +165,7 @@
 }
 
 .footer {
-  margin-top: 80px;
+  margin-top: 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -134,19 +179,28 @@
   font-weight: 600;
 }
 
+@media (max-width: 1200px) {
+  .sliderWrapper {
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}
+
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .navBtn {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 24px;
   }
   
-  .card {
-    padding: 40px 32px;
+  .cardBody {
+    padding: 28px;
   }
 }

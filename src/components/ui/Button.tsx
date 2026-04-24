@@ -6,7 +6,7 @@ import styles from "./Button.module.css";
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "outline" | "outlineWhite" | "accent";
+  variant?: "primary" | "outline" | "secondary" | "outlineWhite" | "accent" | "solidWhite";
   onClick?: () => void;
   type?: "button" | "submit";
   className?: string;
