@@ -44,6 +44,12 @@ const HeroSlider = () => {
   const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
 
   useEffect(() => {
+    // Preload all hero images
+    slides.forEach((slide) => {
+      const img = new (window as any).Image();
+      img.src = slide.image;
+    });
+
     const timer = setInterval(() => {
       setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 6000);
@@ -65,11 +71,14 @@ const HeroSlider = () => {
           className={styles.slide}
         >
           <div className={styles.imageWrapper}>
-             {/* Using standard img for local path visibility in development if Image fails with file:// */}
-            <img 
+            <Image 
               src={slides[current].image} 
               alt={slides[current].title} 
+              fill
+              priority={current === 0}
+              quality={80}
               className={styles.backgroundImage}
+              style={{ objectFit: "cover" }}
             />
             <div className={styles.overlay} />
           </div>
