@@ -67,7 +67,7 @@ export default function InHomeCarePage() {
           <SectionHeader 
             title="Daily Living & Support Services" 
             subtitle="Explore our comprehensive range of specialized in-home care solutions tailored to your loved one's unique needs."
-            center
+            centered
           />
           
           <div className={styles.grid}>
