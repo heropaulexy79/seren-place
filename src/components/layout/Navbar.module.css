@@ -38,9 +38,9 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 24px 0;
+  padding: 20px 0;
   transition: all var(--transition-slow);
-  border-bottom: 1px solid rgba(var(--primary-rgb), 0.05);
+  border-bottom: 1px solid rgba(var(--primary-rgb), 0.08);
 }
 
 
@@ -87,7 +87,7 @@
   gap: 6px;
   font-weight: 700;
   color: var(--secondary);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   letter-spacing: 0.01em;
   transition: all var(--transition-mid);
   padding: 8px 4px;
@@ -127,18 +127,19 @@
   background: white;
   list-style: none;
   border-radius: var(--radius-lg);
-  padding: 16px 0;
-  box-shadow: var(--shadow-xl);
+  padding: 12px 0;
+  box-shadow: var(--shadow-2xl);
   border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
   overflow: hidden;
 }
 
 .dropdownItem {
   display: block;
-  padding: 12px 24px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-main);
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary);
   transition: all var(--transition-fast);
 }
 
@@ -186,9 +187,12 @@
   }
 
   .mobileNavLink {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: block;
+  padding: 8px 0;
+}
   }
 
   .mobileSubLinks {
@@ -200,9 +204,11 @@
 
   .mobileSubLink {
     display: block;
-    padding: 6px 0;
-    font-size: 0.95rem;
+    padding: 10px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
     color: var(--text-muted);
+}
   }
 
   .mobileActions {
