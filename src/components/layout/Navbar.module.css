@@ -193,8 +193,6 @@
   display: block;
   padding: 8px 0;
 }
-  }
-
   .mobileSubLinks {
     list-style: none;
     margin-top: 10px;
@@ -209,7 +207,6 @@
     font-weight: 600;
     color: var(--text-muted);
 }
-  }
 
   .mobileActions {
     margin-top: 30px;
