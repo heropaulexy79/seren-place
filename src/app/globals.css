@@ -111,7 +111,7 @@
   /* Spacing */
   --section-padding: 100px 0;
   --container-max-width: 1200px;
-  --container-padding: 0 24px;
+  --container-padding: 0 16px;
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -353,7 +353,7 @@ label {
   }
 
   .container {
-    padding: 0 16px;
+    padding: 0 12px;
   }
 }
 
