@@ -1,8 +1,19 @@
 import React from "react";
+import { Metadata } from "next";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
 import styles from "./AboutPage.module.css";
 import { Heart, Shield, Users, Sun } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Seren Place | Our Story & Compassionate Care Philosophy",
+  description: "Learn about Seren Place, a premium home healthcare agency founded by nurses. Discover our family-first philosophy and commitment to professional excellence.",
+  openGraph: {
+    title: "About Seren Place | Our Story & Care Philosophy",
+    description: "Premium home healthcare founded on empathy, professional excellence, and family collaboration.",
+    url: "https://serenplace.com/about",
+  }
+};
 
 export default function AboutPage() {
   return (

@@ -1,8 +1,19 @@
 import React from "react";
+import { Metadata } from "next";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import styles from "./ContactPage.module.css";
+
+export const metadata: Metadata = {
+  title: "Contact Seren Place | Schedule a Free Care Consultation",
+  description: "Get in touch with our expert care team today. Schedule a free, no-obligation clinical assessment for your loved one. Available 24/7 for support.",
+  openGraph: {
+    title: "Contact Seren Place | Schedule a Care Consultation",
+    description: "Book your free clinical assessment today. Our professional care coordinators are here to help.",
+    url: "https://serenplace.com/contact",
+  }
+};
 
 export default function ContactPage() {
   return (

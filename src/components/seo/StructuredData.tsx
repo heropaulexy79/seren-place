@@ -1,19 +1,23 @@
 import React from 'react';
 
-const StructuredData = () => {
+interface StructuredDataProps {
+  dynamicSchema?: Record<string, any> | Record<string, any>[];
+}
+
+const StructuredData = ({ dynamicSchema }: StructuredDataProps) => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
     "name": "Seren Place",
     "alternateName": "Seren Place Home Healthcare",
     "url": "https://serenplace.com",
-    "logo": "https://serenplace.com/logo.png", // Assuming a logo exists or using a placeholder
+    "logo": "https://serenplace.com/logo.png",
     "description": "Premium, compassionate, and family-centered home care specializing in adult care, dementia care, and companionship.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "123 Wellness Way, Suite 100",
       "addressLocality": "City Heights",
-      "addressRegion": "ST", // Standard state abbreviation placeholder
+      "addressRegion": "ST",
       "postalCode": "12345",
       "addressCountry": "US"
     },
@@ -73,6 +77,12 @@ const StructuredData = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
+      {dynamicSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(dynamicSchema) }}
+        />
+      )}
     </>
   );
 };
