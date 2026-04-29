@@ -7,19 +7,20 @@ import HowItWorks from "@/components/home/HowItWorks";
 import StatsSection from "@/components/home/StatsSection";
 import Testimonials from "@/components/home/Testimonials";
 import CTASection from "@/components/home/CTASection";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Home() {
   return (
     <>
       <HeroSlider />
-      <TrustBadges />
-      <AboutOverview />
-      <ServicesOverview />
-      <WhyChooseUs />
-      <HowItWorks />
-      <StatsSection />
-      <Testimonials />
-      <CTASection />
+      <ScrollReveal delay={0.2}><TrustBadges /></ScrollReveal>
+      <ScrollReveal><AboutOverview /></ScrollReveal>
+      <ScrollReveal><ServicesOverview /></ScrollReveal>
+      <ScrollReveal><WhyChooseUs /></ScrollReveal>
+      <ScrollReveal><HowItWorks /></ScrollReveal>
+      <ScrollReveal><StatsSection /></ScrollReveal>
+      <ScrollReveal><Testimonials /></ScrollReveal>
+      <ScrollReveal><CTASection /></ScrollReveal>
     </>
   );
 }

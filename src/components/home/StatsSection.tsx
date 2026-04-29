@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./StatsSection.module.css";
 
 const stats = [
-  { value: "500+", label: "Happy Families" },
-  { value: "150+", label: "Licensed Caregivers" },
-  { value: "15+", label: "Years of Excellence" },
+  { value: "20+", label: "Happy Families" },
+  { value: "50+", label: "Licensed Caregivers" },
+  { value: "2+", label: "Years of Excellence" },
   { value: "4.9/5", label: "Family Rating" },
 ];
 
