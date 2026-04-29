@@ -4,9 +4,25 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Phone, Menu, X, Mail, MapPin } from "lucide-react";
+import { ChevronDown, Phone, Menu, X, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 import Button from "../ui/Button";
 import styles from "./Navbar.module.css";
+
+const TikTokIcon = ({ size = 14 }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,6 +70,11 @@ const Navbar = () => {
             </div>
           </div>
           <div className={styles.topBarRight}>
+            <div className={styles.topBarSocials}>
+              <a href="https://facebook.com/serenplace" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><Facebook size={14} /></a>
+              <a href="https://instagram.com/serenplace" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><Instagram size={14} /></a>
+              <a href="https://tiktok.com/@serenplace" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><TikTokIcon size={14} /></a>
+            </div>
             <div className={styles.topBarItem}>
               <Phone size={14} />
               <span>(800) SERENITY</span>

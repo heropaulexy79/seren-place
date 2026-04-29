@@ -27,6 +27,26 @@
   gap: 24px;
 }
 
+.topBarSocials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding-right: 24px;
+}
+
+.topBarSocials a {
+  color: white;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  display: flex;
+}
+
+.topBarSocials a:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
 .topBarItem {
   display: flex;
   align-items: center;

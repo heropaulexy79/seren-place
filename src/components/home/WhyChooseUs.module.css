@@ -41,12 +41,16 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 32px;
 }
 
 .card {
+  flex: 1 1 calc(33.333% - 32px);
+  min-width: 300px;
+  max-width: 420px;
   background: white;
   border-radius: var(--radius-xl);
   padding: 40px 32px;
