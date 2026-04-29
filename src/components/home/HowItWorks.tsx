@@ -30,6 +30,7 @@ const HowItWorks = () => {
     <section className={`section ${styles.section}`}>
       <div className="container">
         <div className={styles.header}>
+          <div className="section-label">The Process</div>
           <h2 className={styles.title}>Simple Path to Exceptional Care</h2>
           <p className={styles.subtitle}>
             We make the journey to professional home care as seamless and stress-free as possible.

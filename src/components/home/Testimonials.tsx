@@ -28,6 +28,7 @@ const Testimonials = () => {
     <section className={`section ${styles.section}`}>
       <div className="container">
         <div className={styles.header}>
+          <div className="section-label">Testimonials</div>
           <h2 className={styles.title}>Real Stories from Grateful Families</h2>
           <p className={styles.subtitle}>
             We are honored to be part of so many families' journeys, providing the support needed to thrive at home.

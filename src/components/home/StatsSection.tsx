@@ -14,6 +14,7 @@ const StatsSection = () => {
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.contentCol}>
+            <div className="section-label">Our Impact</div>
             <h2 className={styles.title}>Why Families Trust Seren Place</h2>
             <p className={styles.text}>
               Our commitment to premium quality care is reflected in the lives we touch every single day. We don’t just provide caregivers; we build support systems.
