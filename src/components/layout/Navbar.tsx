@@ -27,6 +27,15 @@ const TikTokIcon = ({ size = 14 }) => (
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -55,7 +64,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={styles.headerWrapper}>
+    <header className={`${styles.headerWrapper} ${isScrolled ? styles.scrolled : ""}`}>
       {/* TopBar - Disappears on scroll */}
       <div className={styles.topBar}>
         <div className={`container ${styles.topBarContainer}`}>
@@ -91,8 +100,8 @@ const Navbar = () => {
             <Image
               src="/logo.png"
               alt="Seren Place — Compassionate Care for Your Loved Ones"
-              width={160}
-              height={48}
+              width={200}
+              height={60}
               style={{ objectFit: "contain" }}
               priority
             />
