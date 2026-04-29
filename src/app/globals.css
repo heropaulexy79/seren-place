@@ -111,7 +111,7 @@
   /* Spacing */
   --section-padding: 100px 0;
   --container-max-width: 1320px;
-  --container-padding: 0 32px;
+  --container-padding: 0 40px;
 
   /* Transitions */
   --transition-fast: 0.2s ease;
