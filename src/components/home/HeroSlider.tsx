@@ -43,21 +43,23 @@ const HeroSlider = () => {
   const [current, setCurrent] = useState(0);
   const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
 
+  const nextSlide = () => setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+
   useEffect(() => {
     // Preload all hero images
     slides.forEach((slide) => {
       const img = new (window as any).Image();
       img.src = slide.image;
     });
-
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 6000);
-    return () => clearInterval(timer);
   }, []);
 
-  const nextSlide = () => setCurrent(current === slides.length - 1 ? 0 : current + 1);
-  const prevSlide = () => setCurrent(current === 0 ? slides.length - 1 : current - 1);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      nextSlide();
+    }, 6000);
+    return () => clearTimeout(timer);
+  }, [current]);
 
   return (
     <section className={styles.slider} aria-label="Hero Spotlight">
