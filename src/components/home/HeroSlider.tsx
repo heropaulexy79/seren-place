@@ -96,15 +96,15 @@ const HeroSlider = () => {
               <p className={styles.subtitle}>{slides[current].subtitle}</p>
               <div className={styles.actions}>
                 {slides[current].isAssessment ? (
-                  <Button variant="primary" onClick={() => setIsAssessmentOpen(true)}>
+                  <Button variant="primary" className={styles.heroBtn} onClick={() => setIsAssessmentOpen(true)}>
                     {slides[current].cta}
                   </Button>
                 ) : (
-                  <Button variant="primary" href={slides[current].link}>
+                  <Button variant="primary" className={styles.heroBtn} href={slides[current].link}>
                     {slides[current].cta}
                   </Button>
                 )}
-                <Button variant="outlineWhite" href="/about">
+                <Button variant="outlineWhite" className={styles.heroBtn} href="/about">
                   Why Choose Us
                 </Button>
               </div>
