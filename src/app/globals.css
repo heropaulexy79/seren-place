@@ -349,7 +349,7 @@ label {
 
 @media (max-width: 768px) {
   :root {
-    --section-padding: 72px 0;
+    --section-padding: 60px 0;
   }
 
   .container {

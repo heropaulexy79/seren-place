@@ -167,16 +167,17 @@
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 72px;
+    gap: 48px;
   }
   
   .imageCol {
     max-width: 600px;
     margin: 0 auto;
+    padding: 20px 0;
   }
 
   .mainImage {
-    height: 450px;
+    height: 400px;
   }
 }
 

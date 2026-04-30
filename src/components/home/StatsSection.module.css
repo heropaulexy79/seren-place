@@ -91,9 +91,13 @@
 }
 
 @media (max-width: 1024px) {
+  .section {
+    padding: 60px 0;
+  }
+
   .grid {
     grid-template-columns: 1fr;
-    gap: 72px;
+    gap: 48px;
     text-align: center;
   }
 
@@ -103,8 +107,12 @@
 }
 
 @media (max-width: 640px) {
+  .stat {
+    padding: 30px 24px;
+  }
+
   .statsCol {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 }

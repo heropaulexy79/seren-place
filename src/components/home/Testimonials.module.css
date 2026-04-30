@@ -93,12 +93,16 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    margin-bottom: 40px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
   
   .card {
-    padding: 48px 32px;
+    padding: 32px 24px;
   }
 }

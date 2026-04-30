@@ -187,6 +187,10 @@
 }
 
 @media (max-width: 1024px) {
+  .header {
+    margin-bottom: 40px;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -201,6 +205,6 @@
   }
   
   .cardBody {
-    padding: 28px;
+    padding: 24px;
   }
 }
