@@ -330,43 +330,48 @@
   
   .chatButton {
     bottom: 2rem;
-    right: 2rem;
+    right: 1rem;
     position: fixed;
     z-index: 10000;
     width: 56px;
     height: 56px;
   }
 
+  /* Pin the label directly to the left of the fixed chat button */
   .aiLabel {
-    right: 90px;
+    position: fixed;
     bottom: 2rem;
+    right: calc(1rem + 56px + 10px); /* button right + button width + gap */
     top: auto;
     transform: none;
   }
   
   .chatWindow {
-    width: 100%;
+    width: calc(100% - 2rem);
     height: 100%;
-    max-height: 100vh;
-    border-radius: 0;
+    max-height: calc(100vh - 5rem);
+    border-radius: var(--radius-lg);
     margin-bottom: 0;
-    border: none;
+    border: 1px solid var(--border);
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 5rem;
+    left: 1rem;
+    right: 1rem;
+    top: auto;
     z-index: 10001;
   }
 
   .header {
-    padding: 1.5rem;
-    border-radius: 0;
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
 
   .messagesArea {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 1rem;
   }
 
   .inputArea {
-    padding: 1.25rem 1rem calc(1.25rem + env(safe-area-inset-bottom));
+    padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   }
 }
