@@ -45,7 +45,12 @@ const Button: React.FC<ButtonProps> = ({
     }
 
     return (
-      <Link href={href} className={buttonClass} aria-label={ariaLabel}>
+      <Link 
+        href={href} 
+        className={buttonClass} 
+        aria-label={ariaLabel}
+        onClick={onClick}
+      >
         {children}
       </Link>
     );

@@ -255,7 +255,12 @@ const Navbar = () => {
                     );
                   })}
                   <li className={styles.mobileActions}>
-                      <Button variant="accent" href="/contact" className={styles.fullWidth}>
+                    <Button 
+                      variant="accent" 
+                      href="/contact" 
+                      className={styles.fullWidth}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       Book Consultation
                     </Button>
                   </li>
