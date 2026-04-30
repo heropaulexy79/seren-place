@@ -27,6 +27,7 @@ const TikTokIcon = ({ size = 14 }) => (
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileOpenSubmenu, setMobileOpenSubmenu] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -186,34 +187,73 @@ const Navbar = () => {
             >
               <div className="container">
                 <ul className={styles.mobileLinks}>
-                  {navLinks.map((link) => (
-                    <li key={link.name} className={styles.mobileNavItem}>
-                      <div className={styles.mobileNavLinkWrapper}>
-                        <Link
-                          href={link.href}
-                          className={styles.mobileNavLink}
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {link.name}
-                        </Link>
-                      </div>
-                      {link.dropdown && (
-                        <ul className={styles.mobileSubLinks}>
-                          {link.dropdown.map((item) => (
-                            <li key={item.name}>
-                              <Link
-                                href={item.href}
-                                className={styles.mobileSubLink}
-                                onClick={() => setMobileMenuOpen(false)}
+                  {navLinks.map((link) => {
+                    const isSubmenuOpen = mobileOpenSubmenu === link.name;
+                    return (
+                      <li key={link.name} className={styles.mobileNavItem}>
+                        <div className={styles.mobileNavLinkWrapper}>
+                          {link.dropdown ? (
+                            /* Parent with children: clicking toggles the submenu */
+                            <button
+                              className={styles.mobileNavToggle}
+                              onClick={() =>
+                                setMobileOpenSubmenu(isSubmenuOpen ? null : link.name)
+                              }
+                              aria-expanded={isSubmenuOpen}
+                              aria-controls={`mobile-sub-${link.name}`}
+                            >
+                              <span>{link.name}</span>
+                              <ChevronDown
+                                size={18}
+                                className={`${styles.mobileChevron} ${
+                                  isSubmenuOpen ? styles.mobileChevronOpen : ""
+                                }`}
+                                aria-hidden="true"
+                              />
+                            </button>
+                          ) : (
+                            <Link
+                              href={link.href}
+                              className={styles.mobileNavLink}
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {link.name}
+                            </Link>
+                          )}
+                        </div>
+                        {link.dropdown && (
+                          <AnimatePresence initial={false}>
+                            {isSubmenuOpen && (
+                              <motion.ul
+                                id={`mobile-sub-${link.name}`}
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.25, ease: "easeInOut" }}
+                                className={styles.mobileSubLinks}
+                                style={{ overflow: "hidden" }}
                               >
-                                {item.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
+                                {link.dropdown.map((item) => (
+                                  <li key={item.name}>
+                                    <Link
+                                      href={item.href}
+                                      className={styles.mobileSubLink}
+                                      onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setMobileOpenSubmenu(null);
+                                      }}
+                                    >
+                                      {item.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </motion.ul>
+                            )}
+                          </AnimatePresence>
+                        )}
+                      </li>
+                    );
+                  })}
                   <li className={styles.mobileActions}>
                       <Button variant="accent" href="/contact" className={styles.fullWidth}>
                       Book Consultation

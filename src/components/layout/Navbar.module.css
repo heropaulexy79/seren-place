@@ -215,12 +215,38 @@
   }
 
   .mobileNavLink {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--primary);
-  display: block;
-  padding: 8px 0;
-}
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: block;
+    padding: 8px 0;
+  }
+
+  /* Button used for parent items that have a submenu */
+  .mobileNavToggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary);
+    font-family: inherit;
+  }
+
+  .mobileChevron {
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+    color: var(--primary);
+  }
+
+  .mobileChevronOpen {
+    transform: rotate(180deg);
+  }
   .mobileSubLinks {
     list-style: none;
     margin-top: 10px;
