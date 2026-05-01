@@ -54,7 +54,7 @@ export default function AboutPage() {
       <section className={`section section-alt ${styles.missionSection}`}>
         <div className="container">
           <div className={styles.missionBox}>
-            <SectionHeader title="Our Mission" subtitle="" center />
+            <SectionHeader title="Our Mission" subtitle="" centered />
             <p className={styles.missionText}>
               At Seren Place, we strive to create a distinct independent living experience, setting ourselves apart from traditional senior living facilities. We offer an all-inclusive, quality, and affordable senior care solution that guarantees continuous support for our residents.
             </p>
@@ -88,7 +88,7 @@ export default function AboutPage() {
 
       <section className={`section section-alt ${styles.whySection}`}>
         <div className="container">
-          <SectionHeader title="Why Choose Us" subtitle="Discover what sets Seren Place apart" center />
+          <SectionHeader title="Why Choose Us" subtitle="Discover what sets Seren Place apart" centered />
           <div className={styles.whyGrid}>
             <div className={styles.whyItem}>
               <div className={styles.whyIcon}><Shield size={24} /></div>
