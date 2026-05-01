@@ -52,8 +52,8 @@ export default function ContactPage() {
             <div className={styles.infoBlock}>
               <div className={styles.iconWrapper}><MapPin size={24} /></div>
               <div>
-                <h3>Main Headquarters</h3>
-                <p>123 Wellness Way, Suite 100, City Heights, ST 12345</p>
+                <h3>Main Office</h3>
+                <p>13030 Noble View Drive, Suite 106, Charlotte, NC 28273</p>
               </div>
             </div>
 

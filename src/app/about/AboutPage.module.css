@@ -114,28 +114,113 @@
   gap: 20px;
 }
 
+.missionBox {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.missionText {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.5;
+  margin-top: 24px;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.whyItem {
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  transition: all var(--transition-mid);
+}
+
+.whyItem:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--teal-200);
+}
+
+.whyIcon {
+  width: 56px;
+  height: 56px;
+  background: var(--teal-50);
+  color: var(--primary);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.whyItem h3 {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: var(--secondary);
+}
+
+.whyItem p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.officeSection {
+  background: white;
+}
+
+.officeBox {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.officeIcon {
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.officeBox h2 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.officeBox p {
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
     gap: 48px;
   }
   
-  .teamGrid {
+  .whyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .whyGrid {
     grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
+  }
+  
+  .missionText {
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 640px) {
-  .ctaBox {
-    padding: 40px 20px;
-  }
-  
-  .ctaActions {
-    flex-direction: column;
-  }
-  
   .values {
     grid-template-columns: 1fr;
   }
