@@ -5,10 +5,10 @@ import styles from "./LocationsPage.module.css";
 
 const regions = [
   {
-    name: "Downtown & City Heights",
-    address: "123 Wellness Way, Suite 100",
-    phone: "(800) SEREN-01",
-    email: "city@serenplace.com"
+    name: "Charlotte Main Office",
+    address: "13030 Noble View Drive, Suite 106, Charlotte, NC 28273",
+    phone: "(800) SERENITY",
+    email: "care@serenplace.com"
   },
   {
     name: "Westside Shores",
