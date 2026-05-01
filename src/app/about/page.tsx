@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
 import styles from "./AboutPage.module.css";
-import { Heart, Shield, Users, Sun } from "lucide-react";
+import { Heart, Shield, Users, Sun, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Seren Place | Our Story & Compassionate Care Philosophy",
