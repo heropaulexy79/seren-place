@@ -20,7 +20,6 @@ const Footer = () => {
                 width={150}
                 height={44}
                 style={{ objectFit: "contain" }}
-                className={styles.logoImg}
               />
             </Link>
             <p className={styles.mission}>

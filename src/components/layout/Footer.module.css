@@ -37,9 +37,6 @@
   margin-bottom: 8px;
 }
 
-.logoImg {
-  filter: brightness(0) invert(1);
-}
 
 .mission {
   color: var(--text-on-dark-soft);
