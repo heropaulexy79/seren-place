@@ -104,7 +104,7 @@ const HeroSlider = () => {
                     {slides[current].cta}
                   </Button>
                 )}
-                <Button variant="outlineWhite" className={styles.heroBtn} href="/why-choose-us">
+                <Button variant="outlineWhite" className={styles.heroBtn} href="/about#why-choose-us">
                   Why Choose Us
                 </Button>
               </div>

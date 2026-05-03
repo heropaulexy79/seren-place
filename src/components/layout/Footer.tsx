@@ -50,7 +50,7 @@ const Footer = () => {
           <div className={styles.linksCol}>
             <h3>Services</h3>
             <ul>
-              <li><Link href="/services/senior-care">Senior Care</Link></li>
+              <li><Link href="/services/senior-care">Senior Care Services</Link></li>
               <li><Link href="/services/dementia-care">Dementia Care</Link></li>
               <li><Link href="/in-home-care/companionship">Companionship</Link></li>
               <li><Link href="/in-home-care/meal-prep">Meal Preparation</Link></li>

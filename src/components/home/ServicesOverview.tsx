@@ -70,7 +70,7 @@ const ServicesOverview = () => {
     <section className={`section section-alt ${styles.servicesSection}`}>
       <div className="container">
         <div className={styles.header}>
-          <div className="section-label">Our Services</div>
+          <div className="section-label">OUR SERVICES</div>
           <h2 className={styles.title}>Premium Care Services</h2>
           <p className={styles.subtitle}>
             Comprehensive home health solutions designed with a focus on dignity, professional excellence, and family peace of mind.

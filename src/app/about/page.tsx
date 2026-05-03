@@ -86,7 +86,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={`section section-alt ${styles.whySection}`}>
+      <section id="why-choose-us" className={`section section-alt ${styles.whySection}`}>
         <div className="container">
           <SectionHeader title="Why Choose Us" subtitle="Discover what sets Seren Place apart" centered />
           <div className={styles.whyGrid}>

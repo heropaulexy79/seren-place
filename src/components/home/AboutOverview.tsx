@@ -24,7 +24,7 @@ const AboutOverview = () => {
         </div>
 
         <div className={styles.contentCol}>
-          <div className="section-label">Who We Are</div>
+          <div className="section-label">WHO WE ARE</div>
           <h2 className={styles.title}>Your Family Is Our Family. That’s The Seren Way.</h2>
           <p className={styles.lead}>
             At Seren Place, we believe that home is where the heart is, and care should be as unique as the individuals receiving it.
