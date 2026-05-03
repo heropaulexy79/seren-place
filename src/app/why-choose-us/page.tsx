@@ -101,7 +101,7 @@ export default function WhyChooseUsPage() {
           <div className={styles.ctaBox}>
             <h2>Ready to Experience Better Care?</h2>
             <p>Schedule your free, no-obligation clinical assessment today and discover how we can help your family.</p>
-            <Button variant="outlineWhite" href="/contact" size="large">Get Started Now</Button>
+            <Button variant="outlineWhite" href="/contact">Get Started Now</Button>
           </div>
         </div>
       </section>
