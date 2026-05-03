@@ -15,7 +15,7 @@ export default function PrivacyPage() {
         <div className="container">
           <SectionHeader 
             title="Privacy Policy" 
-            subtitle="Your privacy is paramount to us at Seren Place."
+            subtitle="Effective Date: May 3, 2026"
           />
         </div>
       </header>
@@ -23,63 +23,51 @@ export default function PrivacyPage() {
       <section className="section">
         <div className="container">
           <div className={styles.content}>
-            <h2>Welcome to Seren Place</h2>
-            <p>At Seren Place, we prioritize your privacy and are committed to protecting your personal information.</p>
+            <p>At Seren Place, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website or use our services. By accessing our site or services, you agree to the terms of this policy.</p>
 
-            <h3>Information We Collect from Visitors</h3>
-            <p>
-              When you leave comments on our website, we gather the data you provide through the comment form, as well as your IP address and browser user agent string to enhance our spam detection efforts.
-            </p>
-            <p>
-              To determine if you are using the Gravatar service, we may send an anonymized string derived from your email address (known as a hash). You can review Gravatar’s privacy policy here. Once your comment is approved, your profile picture will be displayed publicly alongside your comment.
-            </p>
+            <h3>1. Information We Collect</h3>
+            <ul>
+              <li><strong>Personal Information:</strong> We collect personal data that you provide to us when you leave comments, create an account, or use our services. This may include your name, email address, phone number, and any health-related information relevant to the services we provide.</li>
+              <li><strong>Comments and Media:</strong> When you leave comments on our website, we collect the data in the comments form, your IP address, and browser user agent string to help detect spam. If you upload images, please ensure they do not contain embedded location data (EXIF GPS).</li>
+              <li><strong>Cookies:</strong> We use cookies to enhance your experience on our website. Cookies are small files stored on your device that help us remember your preferences and improve site functionality. You have the option to disable cookies in your browser settings.</li>
+            </ul>
 
-            <h3>Media Uploads</h3>
-            <p>
-              If you choose to upload images to our site, please ensure that they do not contain embedded location data (EXIF GPS). Visitors have the ability to download and extract location information from images featured on our platform.
-            </p>
+            <h3>2. How We Use Your Information</h3>
+            <p>We use the information we collect for various purposes, including:</p>
+            <ul>
+              <li>Providing and managing our services</li>
+              <li>Communicating with you regarding your account or services</li>
+              <li>Improving our website and services</li>
+              <li>Ensuring compliance with legal obligations</li>
+              <li>Preventing fraudulent activity</li>
+            </ul>
 
-            <h3>Cookies Policy</h3>
-            <p>
-              When you leave a comment, you may opt to save your name, email address, and website in cookies for convenience, allowing you to avoid re-entering these details for future comments. These cookies will remain active for one year.
-            </p>
-            <p>
-              Upon visiting our login page, a temporary cookie will be established to check if your browser accepts cookies. This cookie does not contain any personal information and will be discarded once you close your browser.
-            </p>
-            <p>
-              When you log in, we will set several cookies to store your login details and display preferences. Login cookies will expire after two days, while display option cookies will last one year. If you select the “Remember Me” option, your login will persist for two weeks. Logging out will remove these cookies.
-            </p>
-            <p>
-              If you edit or publish an article, an additional cookie will be generated, containing no personal data but indicating the post ID of the article you edited. This cookie will expire after one day.
-            </p>
+            <h3>3. Data Sharing Practices</h3>
+            <ul>
+              <li><strong>Third-Party Services:</strong> We do not sell or rent your personal information to third parties. However, we may share your information with trusted third-party service providers who assist us in operating our website and servicing you, so long as those parties agree to keep this information confidential.</li>
+              <li><strong>Legal Compliance:</strong> We may also disclose your information if required to do so by law or in response to valid requests by public authorities.</li>
+            </ul>
 
-            <h3>Embedded Content from Other Websites</h3>
-            <p>
-              Our articles may feature embedded content, such as videos, images, or articles, that behaves as if you have visited the respective external sites. These sites may collect data about you, use cookies, employ third-party tracking, and monitor your interaction with the embedded content, particularly if you are logged into those sites.
-            </p>
+            <h3>4. Confidentiality and Security</h3>
+            <p>We take the confidentiality and security of your personal information seriously. We implement reasonable security measures to protect your data from unauthorized access, use, or disclosure. However, no method of transmission over the internet or method of electronic storage is 100% secure.</p>
 
-            <h3>Data Sharing Practices</h3>
-            <p>
-              If you request a password reset, your IP address will be included in the reset email for verification purposes.
-            </p>
+            <h3>5. Your Rights Over Your Data</h3>
+            <p>You have the right to:</p>
+            <ul>
+              <li>Access the personal data we hold about you</li>
+              <li>Request correction of any inaccurate information</li>
+              <li>Request deletion of your personal data, subject to legal obligations</li>
+            </ul>
+            <p>To exercise these rights, please contact us at <a href="mailto:info@serenplace.com">info@serenplace.com</a>.</p>
 
-            <h3>Data Retention Policy</h3>
-            <p>
-              Comments and their metadata are retained indefinitely to ensure we can recognize and approve any follow-up comments automatically, thus bypassing the moderation queue.
-            </p>
-            <p>
-              For registered users on our site, we store the personal information provided in user profiles. All users can view, edit, or delete their personal information at any time (with the exception of their username). Website administrators also have access to view and edit this information.
-            </p>
+            <h3>6. Health and Safety Compliance</h3>
+            <p>Seren Place adheres to all applicable health and safety regulations in managing client information. We ensure that your personal health information is handled in compliance with relevant laws and guidelines.</p>
 
-            <h3>Your Rights Over Your Data</h3>
-            <p>
-              If you have an account on our site or have previously commented, you can request an exported file of your personal data that we hold, including any information you have provided. You may also request the deletion of any personal data we retain about you, excluding information we are required to keep for administrative, legal, or security reasons.
-            </p>
+            <h3>7. Changes to This Privacy Policy</h3>
+            <p>We reserve the right to update this Privacy Policy at any time. We will notify you of any changes by posting the new policy on our website. Your continued use of the site after any changes constitutes your acceptance of the new Privacy Policy.</p>
 
-            <h3>Automated Spam Detection</h3>
-            <p>
-              Visitor comments may be subject to automated checks through a spam detection service to maintain the quality of our community interactions.
-            </p>
+            <h3>8. Contact Us</h3>
+            <p>If you have any questions or concerns about this Privacy Policy or your personal information, please contact us at <a href="mailto:info@serenplace.com">info@serenplace.com</a>.</p>
           </div>
         </div>
       </section>
