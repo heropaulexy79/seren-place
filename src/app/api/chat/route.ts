@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     if (!apiKey || !groq) {
       console.error("GROQ_API_KEY is missing from environment variables.");
       return NextResponse.json(
-        { reply: "I'm currently unable to connect. Please contact us directly at contact@serenplace.com or wait for a Care Coordinator to reach out." },
+        { reply: "I'm currently unable to connect. Please contact us directly at info@serenplace.com or wait for a Care Coordinator to reach out." },
         { status: 503 }
       );
     }

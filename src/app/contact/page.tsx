@@ -45,7 +45,7 @@ export default function ContactPage() {
               <div>
                 <h3>Email Inquiries</h3>
                 <p>We aim to respond to all general inquiries within 2 hours.</p>
-                <strong>care@serenplace.com</strong>
+                <strong>info@serenplace.com</strong>
               </div>
             </div>
 
@@ -53,7 +53,7 @@ export default function ContactPage() {
               <div className={styles.iconWrapper}><MapPin size={24} /></div>
               <div>
                 <h3>Main Office</h3>
-                <p>13030 Noble View Drive, Suite 106, Charlotte, NC 28273</p>
+                <p>Charlotte, NC 28273</p>
               </div>
             </div>
 

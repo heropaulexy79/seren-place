@@ -15,10 +15,10 @@ const StructuredData = ({ dynamicSchema }: StructuredDataProps) => {
     "description": "Premium, compassionate, and family-centered home care specializing in adult care, dementia care, and companionship.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Wellness Way, Suite 100",
-      "addressLocality": "City Heights",
-      "addressRegion": "ST",
-      "postalCode": "12345",
+      "streetAddress": "",
+      "addressLocality": "Charlotte",
+      "addressRegion": "NC",
+      "postalCode": "28273",
       "addressCountry": "US"
     },
     "contactPoint": {
@@ -42,13 +42,13 @@ const StructuredData = ({ dynamicSchema }: StructuredDataProps) => {
     "name": "Seren Place",
     "image": "https://serenplace.com/og-image.png",
     "telePhone": "+1-800-SERENITY",
-    "email": "care@serenplace.com",
+    "email": "info@serenplace.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Wellness Way, Suite 100",
-      "addressLocality": "City Heights",
-      "addressRegion": "ST",
-      "postalCode": "12345",
+      "streetAddress": "",
+      "addressLocality": "Charlotte",
+      "addressRegion": "NC",
+      "postalCode": "28273",
       "addressCountry": "US"
     },
     "openingHoursSpecification": {

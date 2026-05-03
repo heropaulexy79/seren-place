@@ -72,11 +72,11 @@ const Navbar = () => {
           <div className={styles.topBarLeft}>
             <div className={styles.topBarItem}>
               <MapPin size={14} />
-              <span>13030 Noble View Drive, Suite 106, Charlotte, NC 28273</span>
+              <span>Charlotte, NC 28273</span>
             </div>
             <div className={styles.topBarItem}>
               <Mail size={14} />
-              <span>care@serenplace.com</span>
+              <span>info@serenplace.com</span>
             </div>
           </div>
           <div className={styles.topBarRight}>

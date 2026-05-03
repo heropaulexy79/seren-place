@@ -1,0 +1,142 @@
+.whyPage {
+  background: var(--bg-white);
+}
+
+.hero {
+  background: var(--gradient-hero);
+  padding: 140px 0 100px;
+  color: white;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.imageCol {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.whyImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+}
+
+.content p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.pillar {
+  padding: 40px;
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-mid);
+  text-align: center;
+}
+
+.pillar:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.pillarIcon {
+  width: 60px;
+  height: 60px;
+  background: var(--teal-50);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.pillar h3 {
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+}
+
+.pillar p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.ctaBox {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--gradient-primary);
+  padding: 60px;
+  border-radius: var(--radius-2xl);
+  color: white;
+  box-shadow: var(--shadow-2xl);
+}
+
+.ctaBox h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.ctaBox p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .pillarsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 60px;
+  }
+  
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+  }
+  
+  .ctaBox {
+    padding: 40px 20px;
+  }
+}

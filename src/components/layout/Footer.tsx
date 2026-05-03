@@ -67,11 +67,11 @@ const Footer = () => {
             </div>
             <div className={styles.contactItem}>
               <Mail size={18} />
-              <span>care@serenplace.com</span>
+              <span>info@serenplace.com</span>
             </div>
             <div className={styles.contactItem}>
               <MapPin size={18} />
-              <span>13030 Noble View Drive, Suite 106, Charlotte, NC 28273</span>
+              <span>Charlotte, NC 28273</span>
             </div>
           </div>
         </div>

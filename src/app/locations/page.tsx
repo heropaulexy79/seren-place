@@ -6,9 +6,9 @@ import styles from "./LocationsPage.module.css";
 const regions = [
   {
     name: "Charlotte Main Office",
-    address: "13030 Noble View Drive, Suite 106, Charlotte, NC 28273",
+    address: "Charlotte, NC 28273",
     phone: "(800) SERENITY",
-    email: "care@serenplace.com"
+    email: "info@serenplace.com"
   },
   {
     name: "Westside Shores",

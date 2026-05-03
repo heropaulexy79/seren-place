@@ -24,7 +24,7 @@ const slides = [
     link: "/services"
   },
   {
-    image: "/images/hero/hero_dementia_care.png",
+    image: "/images/hero/hero_dementia_care_v2.png",
     title: "Specialized Dementia & Alzheimer's Care",
     subtitle: "Trained professionals focused on safety, engagement, and emotional well-being.",
     cta: "Learn More",
@@ -104,7 +104,7 @@ const HeroSlider = () => {
                     {slides[current].cta}
                   </Button>
                 )}
-                <Button variant="outlineWhite" className={styles.heroBtn} href="/about">
+                <Button variant="outlineWhite" className={styles.heroBtn} href="/why-choose-us">
                   Why Choose Us
                 </Button>
               </div>

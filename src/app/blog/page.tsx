@@ -5,6 +5,24 @@ import styles from "./BlogPage.module.css";
 
 const posts = [
   {
+    title: "Navigating Home Health Care: A Guide for Charlotte Families",
+    date: "May 2, 2026",
+    category: "Local Guide",
+    image: "https://images.unsplash.com/photo-1573497620053-ea5310f94a17?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    title: "Personalized Care Plans: Why 'One Size' Doesn't Fit All",
+    date: "April 28, 2026",
+    category: "Quality Care",
+    image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    title: "Safety First: How Professional Caregivers Prevent Falls at Home",
+    date: "April 22, 2026",
+    category: "Safety",
+    image: "https://images.unsplash.com/photo-1586773860418-d3b3a998055c?q=80&w=2066&auto=format&fit=crop"
+  },
+  {
     title: "10 Tips for Transitioning a Loved One to Home Care",
     date: "April 10, 2026",
     category: "Family Advice",
@@ -21,6 +39,12 @@ const posts = [
     date: "March 28, 2026",
     category: "Clinical Insights",
     image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2043&auto=format&fit=crop"
+  },
+  {
+    title: "The Future of Aging: Trends in In-Home Support for 2026",
+    date: "March 15, 2026",
+    category: "Industry Trends",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070&auto=format&fit=crop"
   }
 ];
 

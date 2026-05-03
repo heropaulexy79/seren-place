@@ -129,7 +129,7 @@ export default function AboutPage() {
           <div className={styles.officeBox}>
             <MapPin className={styles.officeIcon} size={48} />
             <h2>Our Office</h2>
-            <p>13030 Noble View Drive, Suite 106<br />Charlotte, NC 28273</p>
+            <p>Charlotte, NC 28273</p>
             <Button variant="primary" href="/contact" className={styles.officeBtn}>Contact Us Today</Button>
           </div>
         </div>
