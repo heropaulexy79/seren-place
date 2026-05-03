@@ -1,12 +1,10 @@
 .privacyPage {
-  background: var(--bg-white);
+  padding-top: 100px;
 }
 
 .hero {
-  background: var(--gradient-hero);
-  padding: 140px 0 80px;
-  color: white;
-  text-align: center;
+  background-color: var(--bg-warm);
+  padding: 80px 0;
 }
 
 .content {
