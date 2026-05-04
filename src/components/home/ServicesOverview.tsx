@@ -13,14 +13,14 @@ const services = [
     title: "Dementia Care",
     desc: "Specialized memory care that focuses on safety, familiarity, and dignity.",
     href: "/services/dementia-care",
-    image: "/images/services/dementia.png"
+    image: "/images/services/dementia_v2.png"
   },
   {
     icon: <Shield size={24} />,
     title: "Alzheimer's Care",
     desc: "Tailored support for the progressive stages of Alzheimer's with empathetic care.",
     href: "/services/alzheimers-care",
-    image: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=2070&auto=format&fit=crop"
+    image: "/images/services/alzheimers.png"
   },
   {
     icon: <Users size={24} />,
@@ -34,7 +34,7 @@ const services = [
     title: "Senior Care Services",
     desc: "Comprehensive daily assistance tailored to specific health requirements.",
     href: "/services/senior-care",
-    image: "/images/services/senior_care.png"
+    image: "/images/services/senior_care_v2.png"
   },
   {
     icon: <Utensils size={24} />,
