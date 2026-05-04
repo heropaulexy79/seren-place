@@ -20,6 +20,24 @@ const testimonials = [
     role: "Family Niece",
     text: "The companionship services have transformed my uncle's quality of life. He looks forward to every visit, and the stories they share are beautiful.",
     rating: 5
+  },
+  {
+    name: "Michael Thompson",
+    role: "Family Son",
+    text: "The clinical oversight provided for my father's post-surgery recovery was exceptional. The nursing team was thorough, professional, and kept us informed every step of the way.",
+    rating: 5
+  },
+  {
+    name: "Linda Garrison",
+    role: "Spouse",
+    text: "The meal preparation and extra help with errands have been a lifesaver. It has allowed me to focus on spending quality time with my husband without the stress of daily chores.",
+    rating: 5
+  },
+  {
+    name: "David Wright",
+    role: "Family Member",
+    text: "From the initial consultation to the daily care visits, the experience has been seamless. Their expertise in Alzheimer's care is evident in everything they do.",
+    rating: 5
   }
 ];
 
