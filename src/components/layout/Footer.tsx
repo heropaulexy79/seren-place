@@ -17,10 +17,11 @@ const Footer = () => {
               <Image
                 src="/logo.png"
                 alt="Seren Place"
-                width={150}
-                height={44}
-                style={{ objectFit: "contain" }}
+                width={40}
+                height={40}
+                className={styles.logoIcon}
               />
+              <span className={styles.logoText}>Seren Place</span>
             </Link>
             <p className={styles.mission}>
               Premium, family-centered care designed to bring peace of mind and professional support to your doorstep.

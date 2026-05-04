@@ -52,6 +52,27 @@ const posts = [
     date: "March 15, 2026",
     category: "Industry Trends",
     image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=2070&auto=format&fit=crop" // Senior with technology
+  },
+  {
+    slug: "personalized-memory-care-dementia",
+    title: "Personalized Memory Care: A Lifeline for Families with Dementia",
+    date: "May 4, 2026",
+    category: "Memory Care",
+    image: "/images/blog/memory-care.png"
+  },
+  {
+    slug: "nutrition-for-seniors-at-home",
+    title: "Nutrition for Seniors: Simple Steps to Better Health at Home",
+    date: "May 3, 2026",
+    category: "Wellness",
+    image: "/images/blog/nutrition-seniors.png"
+  },
+  {
+    slug: "combating-senior-loneliness-companionship",
+    title: "Combating Senior Loneliness: The Power of Professional Companionship",
+    date: "May 2, 2026",
+    category: "Emotional Health",
+    image: "/images/blog/companionship.png"
   }
 ];
 

@@ -95,6 +95,50 @@ const blogData: Record<string, any> = {
       <p>The landscape of home healthcare is evolving rapidly, driven by technology and a growing preference for aging in place. In 2026, we are seeing a shift toward more holistic, personalized support systems.</p>
       <p>From AI-assisted monitoring to more specialized memory care training, the future of aging at home is brighter and safer than ever before.</p>
     `
+  },
+  "personalized-memory-care-dementia": {
+    title: "Personalized Memory Care: A Lifeline for Families with Dementia",
+    date: "May 4, 2026",
+    category: "Memory Care",
+    author: "Memory Care Specialist",
+    image: "/images/blog/memory-care.png",
+    content: `
+      <p>Dementia doesn't just affect the individual; it impacts the entire family. At Seren Place, our memory care approach is rooted in compassion, patience, and personalized engagement.</p>
+      <h3>Creating a Safe and Engaging Environment</h3>
+      <p>Our caregivers are trained in specialized techniques to manage the unique challenges of dementia, focusing on maintaining dignity and quality of life. We believe in "meeting the resident where they are," tailoring activities to their current cognitive abilities and personal history.</p>
+      <p>From sensory stimulation to structured daily routines, we provide a supportive environment that reduces anxiety and promotes a sense of security.</p>
+    `
+  },
+  "nutrition-for-seniors-at-home": {
+    title: "Nutrition for Seniors: Simple Steps to Better Health at Home",
+    date: "May 3, 2026",
+    category: "Wellness",
+    author: "Nutrition Coordinator",
+    image: "/images/blog/nutrition-seniors.png",
+    content: `
+      <p>As we age, our nutritional needs change. Proper hydration and a balanced diet are critical for maintaining energy levels, supporting the immune system, and managing chronic conditions.</p>
+      <h3>Practical Tips for Healthy Eating</h3>
+      <ul>
+        <li>Focus on Nutrient-Dense Foods: Prioritize vegetables, fruits, and lean proteins.</li>
+        <li>Hydration is Key: Encourage regular water intake throughout the day.</li>
+        <li>Meal Planning: Simplify healthy eating with organized meal prep and easy-to-digest options.</li>
+        <li>Social Dining: Whenever possible, make mealtime a social and enjoyable experience.</li>
+      </ul>
+      <p>Our caregivers assist with meal preparation, ensuring that seniors receive delicious, home-cooked meals that meet their dietary requirements.</p>
+    `
+  },
+  "combating-senior-loneliness-companionship": {
+    title: "Combating Senior Loneliness: The Power of Professional Companionship",
+    date: "May 2, 2026",
+    category: "Emotional Health",
+    author: "Wellness Coach",
+    image: "/images/blog/companionship.png",
+    content: `
+      <p>Loneliness is often called the "silent epidemic" among seniors. It can lead to depression, cognitive decline, and physical health issues. Professional companionship offers a vital bridge to social connection.</p>
+      <h3>More Than Just a Visit</h3>
+      <p>Companionship at Seren Place isn't just about "watching" a loved one; it's about building meaningful relationships. Whether it's playing a favorite board game, sharing stories, or accompanying a senior on a walk, our caregivers provide the emotional support that makes every day brighter.</p>
+      <p>By fostering genuine human connection, we help our residents feel less isolated and more engaged with the world around them.</p>
+    `
   }
 };
 
