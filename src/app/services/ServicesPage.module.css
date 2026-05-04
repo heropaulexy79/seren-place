@@ -1,0 +1,102 @@
+.servicesPage {
+  padding-top: 160px; /* High padding to clear navbar */
+  padding-bottom: 100px;
+  background: var(--bg-white);
+}
+
+.header {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-mid);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--teal-200);
+}
+
+.iconWrapper {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-md);
+  background: var(--teal-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--primary);
+  transition: transform var(--transition-mid);
+}
+
+.card:hover .iconWrapper {
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--primary);
+  color: white;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--secondary);
+}
+
+.card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.learnMore {
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.learnMore span {
+  transition: transform var(--transition-fast);
+}
+
+.card:hover .learnMore span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .servicesPage {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .card {
+    padding: 30px;
+  }
+}

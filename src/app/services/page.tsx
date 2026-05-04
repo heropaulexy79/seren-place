@@ -1,56 +1,76 @@
 import React from "react";
 import SectionHeader from "@/components/ui/SectionHeader";
-import ServiceDetail from "@/components/sections/ServiceDetail";
 import Link from "next/link";
-import { Brain, Heart, Shield, Users, Sparkles } from "lucide-react";
+import { Brain, Heart, Shield, Users, Sparkles, Utensils, Zap } from "lucide-react";
+import styles from "./ServicesPage.module.css";
+
+const services = [
+  {
+    title: "Senior Care Services",
+    desc: "Comprehensive daily assistance and clinical support tailored to the unique health needs of seniors.",
+    href: "/services/senior-care",
+    icon: <Heart size={32} />
+  },
+  {
+    title: "Dementia Care",
+    desc: "Specialized memory care that focuses on safety, familiarity, and dignity for seniors navigating dementia.",
+    href: "/services/dementia-care",
+    icon: <Brain size={32} />
+  },
+  {
+    title: "Alzheimer’s Care",
+    desc: "Tailored support for the progressive stages of Alzheimer's with empathetic professional oversight.",
+    href: "/services/alzheimers-care",
+    icon: <Shield size={32} />
+  },
+  {
+    title: "Senior Companionship",
+    desc: "Meaningful interaction and emotional support to combat loneliness and promote mental well-being.",
+    href: "/in-home-care/companionship",
+    icon: <Users size={32} />
+  },
+  {
+    title: "Extra Help with Seniors",
+    desc: "Assistance with light housekeeping, errands, and specialized tasks for enhanced senior independence.",
+    href: "/in-home-care/extra-help",
+    icon: <Sparkles size={32} />
+  },
+  {
+    title: "Meal Preparation",
+    desc: "Nutritious, chef-inspired meals designed specifically for senior dietary needs and preferences.",
+    href: "/in-home-care/meal-prep",
+    icon: <Utensils size={32} />
+  },
+  {
+    title: "Respite Care",
+    desc: "Providing family caregivers a needed break while ensuring absolute continuity of care.",
+    href: "/in-home-care/respite-care",
+    icon: <Zap size={32} />
+  }
+];
 
 export default function ServicesPage() {
-  const services = [
-    {
-      title: "Senior Care Services",
-      desc: "Our core nursing and personal care services ensure that seniors can remain healthy and active at home.",
-      href: "/services/senior-care",
-      icon: <Heart size={40} className="text-secondary" />
-    },
-    {
-      title: "Dementia Care",
-      desc: "Specialized memory care that focuses on safety, familiarity, and dignity.",
-      href: "/services/dementia-care",
-      icon: <Brain size={40} className="text-secondary" />
-    },
-    {
-      title: "Alzheimer’s Care",
-      desc: "Tailored support for the progressive stages of Alzheimer's with empathetic professional support.",
-      href: "/services/alzheimers-care",
-      icon: <Shield size={40} className="text-secondary" />
-    },
-    {
-      title: "Extra Help with Seniors",
-      desc: "Assistance with light housekeeping, errands, and specialized tasks for senior independence.",
-      href: "/in-home-care/extra-help",
-      icon: <Sparkles size={40} className="text-secondary" />
-    }
-  ];
-
   return (
-    <div className="pt-32 pb-24">
-      <div className="container mx-auto px-4">
-        <SectionHeader 
-          title="Specialized Clinical Care" 
-          subtitle="Our medical and memory care services are designed to provide the highest level of clinical excellence in the comfort of home."
-        />
+    <div className={styles.servicesPage}>
+      <div className="container">
+        <div className={styles.header}>
+          <SectionHeader 
+            title="Specialized Clinical & Personal Care" 
+            subtitle="Our comprehensive care services are designed to provide the highest level of excellence in the comfort of home."
+          />
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
+        <div className={styles.grid}>
           {services.map((service, index) => (
-            <Link href={service.href} key={index} className="group p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-transparent hover:border-secondary/20">
-              <div className="mb-6 p-4 bg-warm rounded-2xl w-fit group-hover:scale-110 transition-transform">
+            <Link href={service.href} key={index} className={styles.card}>
+              <div className={styles.iconWrapper}>
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-bold text-primary mb-4">{service.title}</h3>
-              <p className="text-main leading-relaxed mb-6">{service.desc}</p>
-              <span className="text-secondary font-bold flex items-center gap-2">
-                Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </span>
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
+              <div className={styles.learnMore}>
+                Learn More <span>→</span>
+              </div>
             </Link>
           ))}
         </div>

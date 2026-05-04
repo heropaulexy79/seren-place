@@ -1,14 +1,30 @@
 import React from "react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
+import ApplyForm from "@/components/sections/ApplyForm";
 import styles from "./CareersPage.module.css";
-import { Star, Shield, Heart, Award } from "lucide-react";
+import { Star, Shield, Heart, Award, MapPin, Clock } from "lucide-react";
 
 export default function CareersPage() {
   const jobListings = [
-    { title: "Registered Nurse (RN)", type: "Full-time", location: "City Heights" },
-    { title: "Certified Nursing Assistant (CNA)", type: "Part-time", location: "Westside" },
-    { title: "Senior Companion", type: "Flexible", location: "Multiple Regions" }
+    { 
+      title: "Registered Nurse (RN)", 
+      type: "Part-time", 
+      location: "Charlotte, NC",
+      desc: "Provide clinical oversight and compassionate nursing care to our residents in the Charlotte area."
+    },
+    { 
+      title: "Certified Nursing Assistant (CNA)", 
+      type: "Full-time", 
+      location: "Charlotte, NC",
+      desc: "Assist with daily living activities and ensure the comfort and safety of our clients."
+    },
+    { 
+      title: "Senior Companion", 
+      type: "Flexible", 
+      location: "Charlotte, NC",
+      desc: "Provide meaningful social interaction and emotional support to combat loneliness."
+    }
   ];
 
   return (
@@ -17,7 +33,7 @@ export default function CareersPage() {
         <div className="container">
           <SectionHeader 
             title="Join the Heart of Home Care" 
-            subtitle="At Seren Place, we believe that caring for our caregivers is the first step in providing world-class care for our families."
+            subtitle="At Seren Place, we believe that caring for our caregivers is the first step in providing world-class care for our families in Charlotte, NC."
           />
           <div className={styles.actions}>
             <Button variant="primary" href="#open-roles">View Open Roles</Button>
@@ -54,18 +70,26 @@ export default function CareersPage() {
 
       <section id="open-roles" className={`section section-alt ${styles.jobsSection}`}>
         <div className="container">
-          <SectionHeader title="Current Openings" subtitle="Find your next meaningful career move with us." />
+          <SectionHeader title="Current Openings" subtitle="Find your next meaningful career move in Charlotte, NC." />
           <div className={styles.jobList}>
             {jobListings.map((job, index) => (
               <div key={index} className={styles.jobCard}>
                 <div className={styles.jobInfo}>
-                  <h3>{job.title}</h3>
-                  <p>{job.type} • {job.location}</p>
+                  <div className={styles.jobHeader}>
+                    <h3>{job.title}</h3>
+                    <div className={styles.tags}>
+                      <span className={styles.tag}><Clock size={14} /> {job.type}</span>
+                      <span className={styles.tag}><MapPin size={14} /> {job.location}</span>
+                    </div>
+                  </div>
+                  <p>{job.desc}</p>
                 </div>
-                <Button variant="outline" href="/contact">Apply Now</Button>
+                <Button variant="outline" href="#apply">Apply Now</Button>
               </div>
             ))}
           </div>
+
+          <ApplyForm />
         </div>
       </section>
     </div>

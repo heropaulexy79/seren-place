@@ -58,36 +58,65 @@
 .jobList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 48px auto 0;
 }
 
 .jobCard {
   background: white;
-  padding: 30px;
-  border-radius: 16px;
+  padding: 32px;
+  border-radius: 20px;
   border: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-mid);
 }
 
 .jobCard:hover {
   border-color: var(--secondary);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.jobHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
 .jobInfo h3 {
   font-family: var(--font-outfit), sans-serif;
+  color: var(--secondary);
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.tags {
+  display: flex;
+  gap: 12px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
   color: var(--primary);
-  margin-bottom: 4px;
+  background: var(--teal-50);
+  padding: 4px 12px;
+  border-radius: 20px;
 }
 
 .jobInfo p {
   color: var(--text-muted);
-  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 500px;
 }
 
 @media (max-width: 1024px) {
@@ -96,14 +125,20 @@
   }
 }
 
+@media (max-width: 768px) {
+  .jobCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  
+  .jobCard button, .jobCard a {
+    width: 100%;
+  }
+}
+
 @media (max-width: 640px) {
   .benefitsGrid {
     grid-template-columns: 1fr;
-  }
-  
-  .jobCard {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
   }
 }
