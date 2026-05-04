@@ -89,11 +89,14 @@ export default function ContactPage() {
 
               <div className={styles.formGroup}>
                 <label htmlFor="service">Interested Service</label>
-                <select id="service">
+                <select id="service" required>
                   <option value="">Select a service...</option>
-                  <option value="dementia">Dementia & Alzheimer's Care</option>
-                  <option value="senior">General Senior Care</option>
-                  <option value="companionship">Companionship</option>
+                  <option value="senior-care">Senior Care Services</option>
+                  <option value="dementia">Dementia Care</option>
+                  <option value="alzheimers">Alzheimer's Care</option>
+                  <option value="companionship">Senior Companionship</option>
+                  <option value="extra-help">Extra Help with Seniors</option>
+                  <option value="meal-prep">Meal Preparation</option>
                   <option value="respite">Respite Care</option>
                   <option value="other">Other Inquiry</option>
                 </select>
