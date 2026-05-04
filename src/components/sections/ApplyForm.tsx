@@ -54,6 +54,7 @@ const ApplyForm = ({ position }: { position?: string }) => {
               <option value="" disabled>Select a position</option>
               <option value="rn">Registered Nurse (RN) - Part-time</option>
               <option value="cna">Certified Nursing Assistant (CNA)</option>
+              <option value="caregiver">Professional Caregiver</option>
               <option value="companion">Senior Companion</option>
               <option value="other">Other</option>
             </select>

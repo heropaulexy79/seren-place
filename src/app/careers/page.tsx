@@ -24,6 +24,12 @@ export default function CareersPage() {
       type: "Flexible", 
       location: "Charlotte, NC",
       desc: "Provide meaningful social interaction and emotional support to combat loneliness."
+    },
+    { 
+      title: "Professional Caregiver", 
+      type: "Full-time / Part-time", 
+      location: "Charlotte, NC",
+      desc: "Provide essential daily living support and personalized care to our residents in their homes."
     }
   ];
 
