@@ -14,13 +14,6 @@ const Footer = () => {
           {/* Brand & Mission */}
           <div className={styles.brandCol}>
             <Link href="/" className={styles.logo}>
-              <Image
-                src="/logo.png"
-                alt="Seren Place"
-                width={40}
-                height={40}
-                className={styles.logoIcon}
-              />
               <span className={styles.logoText}>Seren Place</span>
             </Link>
             <p className={styles.mission}>

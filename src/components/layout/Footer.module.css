@@ -33,22 +33,15 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
   line-height: 1;
   margin-bottom: 8px;
   text-decoration: none;
 }
 
-.logoIcon {
-  object-fit: contain;
-  /* Filter to turn the logo into teal (#1E525D) */
-  filter: invert(26%) sepia(35%) saturate(836%) hue-rotate(143deg) brightness(93%) contrast(88%);
-}
-
 .logoText {
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--accent); /* Using brand accent for best readability on dark bg */
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: white;
   letter-spacing: -0.02em;
   transition: color var(--transition-fast);
 }
