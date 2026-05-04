@@ -51,7 +51,9 @@ const Footer = () => {
             <ul>
               <li><Link href="/services/senior-care">Senior Care Services</Link></li>
               <li><Link href="/services/dementia-care">Dementia Care</Link></li>
-              <li><Link href="/in-home-care/companionship">Companionship</Link></li>
+              <li><Link href="/services/alzheimers-care">Alzheimer’s Care</Link></li>
+              <li><Link href="/in-home-care/companionship">Senior Companionship</Link></li>
+              <li><Link href="/in-home-care/extra-help">Extra Help with Seniors</Link></li>
               <li><Link href="/in-home-care/meal-prep">Meal Preparation</Link></li>
               <li><Link href="/in-home-care/respite-care">Respite Care</Link></li>
             </ul>

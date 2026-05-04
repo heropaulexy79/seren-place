@@ -2,7 +2,7 @@ import React from "react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import ServiceDetail from "@/components/sections/ServiceDetail";
 import Link from "next/link";
-import { Brain, Heart, Shield, Users } from "lucide-react";
+import { Brain, Heart, Shield, Users, Sparkles } from "lucide-react";
 
 export default function ServicesPage() {
   const services = [
@@ -23,6 +23,12 @@ export default function ServicesPage() {
       desc: "Tailored support for the progressive stages of Alzheimer's with empathetic professional support.",
       href: "/services/alzheimers-care",
       icon: <Shield size={40} className="text-secondary" />
+    },
+    {
+      title: "Extra Help with Seniors",
+      desc: "Assistance with light housekeeping, errands, and specialized tasks for senior independence.",
+      href: "/in-home-care/extra-help",
+      icon: <Sparkles size={40} className="text-secondary" />
     }
   ];
 

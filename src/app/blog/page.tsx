@@ -9,49 +9,49 @@ const posts = [
     title: "Navigating Home Health Care: A Guide for Charlotte Families",
     date: "May 2, 2026",
     category: "Local Guide",
-    image: "https://images.unsplash.com/photo-1573497620053-ea5310f94a17?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop" // Family bonding
   },
   {
     slug: "personalized-care-plans",
     title: "Personalized Care Plans: Why 'One Size' Doesn't Fit All",
     date: "April 28, 2026",
     category: "Quality Care",
-    image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1576091160550-2173dad99988?q=80&w=2070&auto=format&fit=crop" // Caregiver and senior talking
   },
   {
     slug: "preventing-falls-at-home",
     title: "Safety First: How Professional Caregivers Prevent Falls at Home",
     date: "April 22, 2026",
     category: "Safety",
-    image: "https://images.unsplash.com/photo-1586773860418-d3b3a998055c?q=80&w=2066&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1581578731548-c64695ce6958?q=80&w=2070&auto=format&fit=crop" // Caregiver assisting mobility
   },
   {
     slug: "transitioning-to-home-care",
     title: "10 Tips for Transitioning a Loved One to Home Care",
     date: "April 10, 2026",
     category: "Family Advice",
-    image: "https://images.unsplash.com/photo-1544027993-37dbfe43552e?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=2070&auto=format&fit=crop" // Warm greeting
   },
   {
     slug: "social-interaction-for-seniors",
     title: "The Importance of Social Interaction for Seniors",
     date: "April 5, 2026",
     category: "Emotional Well-being",
-    image: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=2070&auto=format&fit=crop" // Seniors laughing
   },
   {
     slug: "early-signs-of-dementia",
     title: "Understanding Early Signs of Dementia",
     date: "March 28, 2026",
     category: "Clinical Insights",
-    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2043&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1501770118606-b1d640529346?q=80&w=2043&auto=format&fit=crop" // Reflective senior
   },
   {
     slug: "future-of-aging-2026",
     title: "The Future of Aging: Trends in In-Home Support for 2026",
     date: "March 15, 2026",
     category: "Industry Trends",
-    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=2070&auto=format&fit=crop" // Senior with technology
   }
 ];
 

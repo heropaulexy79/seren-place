@@ -33,7 +33,7 @@ export default function AlzheimersCarePage() {
       <ServiceDetail 
         title="Alzheimer's Specialty Care"
         description="Tailored support for the progressive stages of Alzheimer's. Our caregivers are specifically trained in techniques to reduce anxiety, manage behavioral changes, and cultivate a sense of security."
-        image="https://images.unsplash.com/photo-1544027993-37dbfe43552e?q=80&w=2070&auto=format&fit=crop"
+        image="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=2070&auto=format&fit=crop"
         audience="Individuals in advanced stages of cognitive decline requiring intensive, empathetic professional support."
         benefits={[
           "Behavioral Management Strategies",

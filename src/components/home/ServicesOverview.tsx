@@ -10,10 +10,17 @@ import styles from "./ServicesOverview.module.css";
 const services = [
   {
     icon: <Brain size={24} />,
-    title: "Dementia & Alzheimer's",
+    title: "Dementia Care",
     desc: "Specialized memory care that focuses on safety, familiarity, and dignity.",
     href: "/services/dementia-care",
     image: "/images/services/dementia.png"
+  },
+  {
+    icon: <Shield size={24} />,
+    title: "Alzheimer's Care",
+    desc: "Tailored support for the progressive stages of Alzheimer's with empathetic care.",
+    href: "/services/alzheimers-care",
+    image: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=2070&auto=format&fit=crop"
   },
   {
     icon: <Users size={24} />,
@@ -38,7 +45,7 @@ const services = [
   },
   {
     icon: <Sparkles size={24} />,
-    title: "Extra Help",
+    title: "Extra Help with Seniors",
     desc: "Assistance with light housekeeping, errands, and specialized tasks.",
     href: "/in-home-care/extra-help",
     image: "/images/services/extra_help.png"
