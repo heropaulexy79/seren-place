@@ -2,6 +2,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
+import ShareButtons from "@/components/ui/ShareButtons";
 import styles from "./BlogPost.module.css";
 import { Calendar, User, Tag, ChevronLeft } from "lucide-react";
 import Link from "next/link";
@@ -293,12 +294,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
             <div className={styles.sidebarBox}>
               <h3>Share this Article</h3>
-              <div className={styles.shareIcons}>
-                {/* Simplified share icons */}
-                <div className={styles.shareIcon}>FB</div>
-                <div className={styles.shareIcon}>TW</div>
-                <div className={styles.shareIcon}>LI</div>
-              </div>
+              <ShareButtons title={post.title} slug={slug} />
             </div>
           </aside>
         </div>

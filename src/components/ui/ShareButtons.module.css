@@ -1,0 +1,35 @@
+.shareButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.shareIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-mid);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.shareIcon:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+@media (max-width: 640px) {
+  .shareIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
