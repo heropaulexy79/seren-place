@@ -22,7 +22,15 @@ const Footer = () => {
             <div className={styles.socials}>
               <a href="#" className={styles.socialLink}><Facebook size={20} /></a>
               <a href="#" className={styles.socialLink}><Twitter size={20} /></a>
-              <a href="#" className={styles.socialLink}><Instagram size={20} /></a>
+              <a 
+                href="https://www.instagram.com/seren_place.homecare?igsh=ZWszdHdlOGY0bDcw&utm_source=qr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.socialLink}
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram size={20} />
+              </a>
               <a href="#" className={styles.socialLink}><Linkedin size={20} /></a>
             </div>
           </div>

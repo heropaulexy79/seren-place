@@ -12,58 +12,86 @@ interface ShareButtonsProps {
 const ShareButtons: React.FC<ShareButtonsProps> = ({ title, slug }) => {
   const shareUrl = typeof window !== "undefined" ? window.location.href : `https://serenplace.com/blog/${slug}`;
 
-  const shareLinks = {
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
-    twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(title)}`,
-    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
-    instagram: `https://www.instagram.com/` // Instagram doesn't support direct URL sharing via web links easily
+  const handleShare = async (platform: string) => {
+    const shareData = {
+      title: title,
+      text: `Check out this article: ${title}`,
+      url: shareUrl,
+    };
+
+    // Use Web Share API if available (especially good for Instagram on mobile)
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (err) {
+        console.log("Error sharing:", err);
+      }
+    }
+
+    // Fallback links for desktop
+    let url = "";
+    switch (platform) {
+      case "facebook":
+        url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+        break;
+      case "twitter":
+        url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(title)}`;
+        break;
+      case "linkedin":
+        url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+        break;
+      case "instagram":
+        // Instagram doesn't have a direct share URL, so we fallback to copy link
+        copyToClipboard();
+        return;
+      case "copy":
+        copyToClipboard();
+        return;
+    }
+
+    if (url) {
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
   };
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(shareUrl);
-    alert("Link copied to clipboard!");
+    alert("Link copied! You can now paste and share this article on Instagram.");
   };
 
   return (
     <div className={styles.shareButtons}>
-      <a 
-        href={shareLinks.facebook} 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <button 
+        onClick={() => handleShare("facebook")} 
         className={styles.shareIcon}
         aria-label="Share on Facebook"
       >
         <Facebook size={20} />
-      </a>
-      <a 
-        href={shareLinks.twitter} 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      </button>
+      <button 
+        onClick={() => handleShare("twitter")} 
         className={styles.shareIcon}
         aria-label="Share on Twitter"
       >
         <Twitter size={20} />
-      </a>
-      <a 
-        href={shareLinks.linkedin} 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      </button>
+      <button 
+        onClick={() => handleShare("linkedin")} 
         className={styles.shareIcon}
         aria-label="Share on LinkedIn"
       >
         <Linkedin size={20} />
-      </a>
-      <a 
-        href={shareLinks.instagram} 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      </button>
+      <button 
+        onClick={() => handleShare("instagram")} 
         className={styles.shareIcon}
-        aria-label="Follow on Instagram"
+        aria-label="Share on Instagram"
       >
         <Instagram size={20} />
-      </a>
+      </button>
       <button 
-        onClick={copyToClipboard} 
+        onClick={() => handleShare("copy")} 
         className={styles.shareIcon}
         aria-label="Copy Link"
       >
