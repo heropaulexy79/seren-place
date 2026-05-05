@@ -56,7 +56,7 @@ const Navbar = () => {
       dropdown: [
         { name: "Extra Help With Seniors", href: "/in-home-care/extra-help" },
         { name: "Senior Companionship", href: "/in-home-care/companionship" },
-        { name: "Senior Meal Preparation", href: "/in-home-care/meal-prep" },
+        { name: "Senior Meal Preparation", href: "/in-home-care/prep" },
         { name: "Respite Care", href: "/in-home-care/respite-care" },
       ],
     },
@@ -82,7 +82,14 @@ const Navbar = () => {
           <div className={styles.topBarRight}>
             <div className={styles.topBarSocials}>
               <a href="https://facebook.com/serenplace" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><Facebook size={14} /></a>
-              <a href="https://instagram.com/serenplace" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><Instagram size={14} /></a>
+              <a 
+                href="https://www.instagram.com/seren_place.homecare?igsh=ZWszdHdlOGY0bDcw&utm_source=qr" 
+                aria-label="Instagram" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Instagram size={14} />
+              </a>
               <a href="https://tiktok.com/@serenplace" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><TikTokIcon size={14} /></a>
             </div>
             <div className={styles.topBarItem}>
@@ -237,7 +244,7 @@ const Navbar = () => {
                                   <li key={item.name}>
                                     <Link
                                       href={item.href}
-                                      className={styles.mobileSubLink}
+                                      className={item.name === "Senior Meal Preparation" ? styles.mobileSubLink : styles.mobileSubLink}
                                       onClick={() => {
                                         setMobileMenuOpen(false);
                                         setMobileOpenSubmenu(null);
