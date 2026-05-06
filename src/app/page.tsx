@@ -6,6 +6,7 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import HowItWorks from "@/components/home/HowItWorks";
 import StatsSection from "@/components/home/StatsSection";
 import Testimonials from "@/components/home/Testimonials";
+import FAQSection from "@/components/home/FAQSection";
 import CTASection from "@/components/home/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <ScrollReveal><HowItWorks /></ScrollReveal>
       <ScrollReveal><StatsSection /></ScrollReveal>
       <ScrollReveal><Testimonials /></ScrollReveal>
+      <ScrollReveal><FAQSection /></ScrollReveal>
       <ScrollReveal><CTASection /></ScrollReveal>
     </>
   );

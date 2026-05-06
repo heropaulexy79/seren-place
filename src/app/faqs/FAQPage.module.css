@@ -1,0 +1,27 @@
+.faqPage {
+  padding-top: 100px; /* Offset for sticky header if exists */
+}
+
+.hero {
+  background: var(--gradient-section);
+  padding: 80px 0 40px;
+}
+
+.faqContent {
+  background: var(--bg-white);
+}
+
+.faqList {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .faqPage {
+    padding-top: 80px;
+  }
+  
+  .hero {
+    padding: 60px 0 30px;
+  }
+}
