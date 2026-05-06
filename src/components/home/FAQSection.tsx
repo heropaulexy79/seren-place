@@ -12,9 +12,8 @@ export default function FAQSection() {
     <section className={`section ${styles.faqSection}`}>
       <div className="container">
         <SectionHeader 
-          label="FAQ"
           title="Common Questions About Home Care"
-          description="Find answers to the most common questions about our services, pricing, and how we care for your loved ones."
+          subtitle="Find answers to the most common questions about our services, pricing, and how we care for your loved ones."
           centered
         />
         
