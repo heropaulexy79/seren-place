@@ -61,12 +61,14 @@ export async function POST(req: Request) {
         throw new Error("Empty response from Groq");
       }
     } catch (err: any) {
-      console.error('Groq API Error Details:', err?.response?.data || err?.message || err);
+      const errorMsg = err?.status ? `Groq Error ${err.status}: ${err?.message || JSON.stringify(err)}` : (err?.message || String(err));
+      console.error('Groq API Error Details:', errorMsg);
       
-      // Intelligent fallback concierge response when external API fails or key is invalid
-      const fallbackReply = "Hello! Welcome to Seren Place Homecare. We are currently preparing for our official launch in Charlotte Metro & Union County. How can I assist you today with our upcoming senior care services or joining our client waitlist?";
-      return NextResponse.json({ reply: fallbackReply });
+      return NextResponse.json({ 
+        reply: `[AI Connection Notice]: ${errorMsg}` 
+      }, { status: 200 });
     }
+
 
 
     
