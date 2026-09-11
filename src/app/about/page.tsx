@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Learn about Seren Place, a premium home healthcare agency founded by nurses. Discover our family-first philosophy and commitment to professional excellence.",
   openGraph: {
     title: "About Seren Place | Our Story & Care Philosophy",
-    description: "Premium home healthcare founded on empathy, professional excellence, and family collaboration.",
+    description: "A Premium home healthcare founded on empathy, professional excellence, and family collaboration.",
     url: "https://serenplace.com/about",
   }
 };
