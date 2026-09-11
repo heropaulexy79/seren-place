@@ -46,12 +46,13 @@ export async function POST(req: Request) {
     try {
       const chatCompletion = await groq.chat.completions.create({
         messages: messages as any,
-        model: "llama-3.1-8b-instant",
+        model: "llama3-8b-8192",
         temperature: 0.7,
         max_tokens: 1024,
         top_p: 1,
         stream: false,
       });
+
 
 
       const responseText = chatCompletion.choices[0]?.message?.content || "";
@@ -62,11 +63,12 @@ export async function POST(req: Request) {
         throw new Error("Empty response from Groq");
       }
     } catch (err: any) {
-      const errMsg = err?.message || JSON.stringify(err);
-      console.error('Groq API Error Details:', errMsg);
+      console.error('Groq API Error Details:', err?.message || err);
       
-      return NextResponse.json({ reply: `[AI Error]: ${errMsg}` });
+      const fallbackReply = "Hello! Welcome to Seren Place Homecare. We are currently preparing for our official launch in Charlotte Metro & Union County. How can I assist you today with our upcoming senior care services or joining our client waitlist?";
+      return NextResponse.json({ reply: fallbackReply });
     }
+
 
 
 
