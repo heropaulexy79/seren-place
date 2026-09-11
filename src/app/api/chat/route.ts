@@ -1,10 +1,6 @@
 import { NextResponse } from 'next/server';
 import Groq from 'groq-sdk';
 
-// Initialize Groq API
-const apiKey = (process.env.GROQ_API_KEY || "").trim();
-const groq = apiKey ? new Groq({ apiKey }) : null;
-
 const SYSTEM_PROMPT = `
 You are an empathetic, professional Care Concierge AI for Seren Place, a premium home healthcare agency. 
 Your goal is to reassure families, answer basic questions about home healthcare, and encourage them to book a consultation or speak with a Care Coordinator.
@@ -18,6 +14,10 @@ Key Guidelines:
 
 export async function POST(req: Request) {
   try {
+    const apiKey = (process.env.GROQ_API_KEY || "").trim();
+    const groq = apiKey ? new Groq({ apiKey }) : null;
+
+
     const body = await req.json();
     const { message, conversationHistory = [] } = body;
 
