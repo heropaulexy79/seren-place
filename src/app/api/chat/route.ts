@@ -62,11 +62,12 @@ export async function POST(req: Request) {
         throw new Error("Empty response from Groq");
       }
     } catch (err: any) {
-      console.error('Groq API Error Details:', err?.message || err);
+      const errMsg = err?.message || JSON.stringify(err);
+      console.error('Groq API Error Details:', errMsg);
       
-      const fallbackReply = "Hello! Welcome to Seren Place Homecare. We are currently preparing for our official launch in Charlotte Metro & Union County. How can I assist you today with our upcoming senior care services or joining our client waitlist?";
-      return NextResponse.json({ reply: fallbackReply });
+      return NextResponse.json({ reply: `[AI Error]: ${errMsg}` });
     }
+
 
 
 
