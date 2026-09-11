@@ -34,18 +34,22 @@ export default function ChatWidget() {
 
   useEffect(() => {
     if (isOpen) {
-      scrollToBottom();
       setHasUnread(false);
-      // Accessibility: Focus the input when the chat opens
-      inputRef.current?.focus();
+      requestAnimationFrame(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        inputRef.current?.focus();
+      });
     }
   }, [isOpen]);
 
   useEffect(() => {
     if (messages.length > 0 || isTyping) {
-      scrollToBottom();
+      requestAnimationFrame(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      });
     }
   }, [messages, isTyping]);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
