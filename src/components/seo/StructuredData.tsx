@@ -23,7 +23,7 @@ const StructuredData = ({ dynamicSchema }: StructuredDataProps) => {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-800-SERENITY",
+      "telephone": "+1 910-710-7977",
       "contactType": "customer service",
       "areaServed": "US",
       "availableLanguage": "English"
@@ -41,7 +41,8 @@ const StructuredData = ({ dynamicSchema }: StructuredDataProps) => {
     "@type": "LocalBusiness",
     "name": "Seren Place",
     "image": "https://serenplace.com/og-image.png",
-    "telePhone": "+1-800-SERENITY",
+    "telePhone": "+1 910-710-7977",
+
     "email": "info@serenplace.com",
     "address": {
       "@type": "PostalAddress",

@@ -97,8 +97,9 @@ const Navbar = () => {
             </div>
             <div className={styles.topBarItem}>
               <Phone size={14} />
-              <span>(800) SERENITY</span>
+              <span>+1 910-710-7977</span>
             </div>
+
           </div>
         </div>
       </div>

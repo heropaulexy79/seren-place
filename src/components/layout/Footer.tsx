@@ -67,8 +67,9 @@ const Footer = () => {
             <h3>Get in Touch</h3>
             <div className={styles.contactItem}>
               <Phone size={18} />
-              <span>(800) SERENITY</span>
+              <span>+1 910-710-7977</span>
             </div>
+
             <div className={styles.contactItem}>
               <Mail size={18} />
               <span>info@serenplace.com</span>

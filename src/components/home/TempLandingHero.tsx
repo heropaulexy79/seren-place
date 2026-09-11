@@ -94,12 +94,13 @@ export default function TempLandingHero() {
         <div className={styles.contactBanner}>
           <div className={styles.contactItem}>
             <Phone size={18} color="var(--primary)" />
-            <span>Call Us: <strong>(704) 936-0002</strong></span>
+            <span>Call Us: <strong>+1 910-710-7977</strong></span>
           </div>
           <div className={styles.contactItem}>
             <Mail size={18} color="var(--primary)" />
-            <span>Email: <strong>info@serenplacehomecare.com</strong></span>
+            <span>Email: <strong>info@serenplace.com</strong></span>
           </div>
+
         </div>
       </div>
     </section>

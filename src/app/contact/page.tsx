@@ -36,7 +36,8 @@ export default function ContactPage() {
               <div>
                 <h3>Call Our Care Team</h3>
                 <p>Available 24/7 for emergency clinical support.</p>
-                <strong>(800) SERENITY</strong>
+                <strong>+1 910-710-7977</strong>
+
               </div>
             </div>
 
