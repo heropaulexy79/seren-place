@@ -65,6 +65,8 @@ const Navbar = () => {
     { name: "Contact", href: "/contact" },
   ];
 
+
+
   return (
     <header className={`${styles.headerWrapper} ${isScrolled ? styles.scrolled : ""}`}>
       {/* TopBar - Disappears on scroll */}

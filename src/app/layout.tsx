@@ -55,7 +55,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+
       <body style={{ fontFamily: "var(--font-lato), sans-serif" }}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <StructuredData />

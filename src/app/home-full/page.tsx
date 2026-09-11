@@ -1,34 +1,28 @@
-import TempLandingHero from "@/components/home/TempLandingHero";
+import HeroSlider from "@/components/home/HeroSlider";
 import TrustBadges from "@/components/home/TrustBadges";
 import AboutOverview from "@/components/home/AboutOverview";
 import ServicesOverview from "@/components/home/ServicesOverview";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import HowItWorks from "@/components/home/HowItWorks";
+import StatsSection from "@/components/home/StatsSection";
+import Testimonials from "@/components/home/Testimonials";
 import FAQSection from "@/components/home/FAQSection";
+import CTASection from "@/components/home/CTASection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const metadata = {
-  title: "Seren Place Homecare | Non-Medical Home Care Coming Soon to Charlotte Metro & Union County",
-  description: "Seren Place Homecare is preparing for our official launch in Charlotte Metro & Union County. Join our client waitlist or apply to join our founding care team.",
-};
-
-export default function Home() {
+export default function FullHome() {
   return (
     <>
-      {/* 
-        PRE-LAUNCH TEMPORARY LANDING PAGE
-        When officially launched, switch to rendering <FullHome /> from '@/app/home-full/page'
-      */}
-      <TempLandingHero />
+      <HeroSlider />
       <ScrollReveal delay={0.2}><TrustBadges /></ScrollReveal>
       <ScrollReveal><AboutOverview /></ScrollReveal>
       <ScrollReveal><ServicesOverview /></ScrollReveal>
       <ScrollReveal><WhyChooseUs /></ScrollReveal>
       <ScrollReveal><HowItWorks /></ScrollReveal>
+      <ScrollReveal><StatsSection /></ScrollReveal>
+      <ScrollReveal><Testimonials /></ScrollReveal>
       <ScrollReveal><FAQSection /></ScrollReveal>
+      <ScrollReveal><CTASection /></ScrollReveal>
     </>
   );
 }
-
-
-
