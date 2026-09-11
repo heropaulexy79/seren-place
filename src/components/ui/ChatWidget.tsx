@@ -149,21 +149,100 @@ export default function ChatWidget() {
               role="log" 
               aria-relevant="additions"
             >
-              {messages.map((msg) => (
-                <div 
-                  key={msg.id} 
-                  className={`${styles.messageWrapper} ${msg.sender === "ai" ? styles.messageWrapperAi : styles.messageWrapperUser}`}
-                >
-                  <div
-                    className={`${styles.message} ${
-                      msg.sender === "ai" ? styles.messageAi : styles.messageUser
-                    }`}
+              {messages.map((msg) => {
+                // Parse markdown formatting for assistant responses
+                const renderFormattedText = (text: string) => {
+                  // If text contains markdown table markup (pipes)
+                  if (text.includes('|') && text.includes('-|-')) {
+                    const lines = text.split('\n');
+                    const tableLines: string[] = [];
+                    const otherContent: string[] = [];
+                    let inTable = false;
+
+                    lines.forEach(line => {
+                      if (line.trim().startsWith('|')) {
+                        inTable = true;
+                        tableLines.push(line);
+                      } else {
+                        if (inTable) inTable = false;
+                        otherContent.push(line);
+                      }
+                    });
+
+                    // Parse table header and rows
+                    const cleanTableLines = tableLines.filter(l => !l.includes('---'));
+                    const headers = cleanTableLines[0]?.split('|').filter(c => c.trim().length > 0).map(c => c.trim());
+                    const rows = cleanTableLines.slice(1).map(r => r.split('|').filter(c => c.trim().length > 0).map(c => c.trim()));
+
+                    return (
+                      <div>
+                        {lines[0] && !lines[0].startsWith('|') && <p style={{ marginBottom: '12px' }}>{lines[0]}</p>}
+                        {headers && (
+                          <div style={{ overflowX: 'auto', margin: '12px 0', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
+                            <table style={{ width: '100%', fontSize: '0.875rem', borderCollapse: 'collapse', textAlign: 'left' }}>
+                              <thead>
+                                <tr style={{ backgroundColor: '#f1f5f9', borderBottom: '1px solid #e2e8f0' }}>
+                                  {headers.map((h, idx) => (
+                                    <th key={idx} style={{ padding: '8px 12px', fontWeight: '700' }}>{h.replace(/\*\*/g, '')}</th>
+                                  ))}
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {rows.map((row, rIdx) => (
+                                  <tr key={rIdx} style={{ borderBottom: rIdx === rows.length - 1 ? 'none' : '1px solid #e2e8f0' }}>
+                                    {row.map((cell, cIdx) => (
+                                      <td key={cIdx} style={{ padding: '8px 12px' }}>
+                                        {cell.replace(/\*\*(.*?)\*\*/g, '$1')}
+                                      </td>
+                                    ))}
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        )}
+                        {otherContent.slice(1).map((paragraph, pIdx) => (
+                          <p key={pIdx} style={{ marginTop: '8px' }}>{paragraph}</p>
+                        ))}
+                      </div>
+                    );
+                  }
+
+                  // Standard markdown formatting (bold & line breaks)
+                  const formatted = text.split('\n\n').map((paragraph, pIdx) => {
+                    const parts = paragraph.split(/(\*\*.*?\*\*)/g);
+                    return (
+                      <p key={pIdx} style={{ marginBottom: pIdx < text.split('\n\n').length - 1 ? '10px' : '0' }}>
+                        {parts.map((part, idx) => {
+                          if (part.startsWith('**') && part.endsWith('**')) {
+                            return <strong key={idx}>{part.slice(2, -2)}</strong>;
+                          }
+                          return part;
+                        })}
+                      </p>
+                    );
+                  });
+
+                  return <div>{formatted}</div>;
+                };
+
+                return (
+                  <div 
+                    key={msg.id} 
+                    className={`${styles.messageWrapper} ${msg.sender === "ai" ? styles.messageWrapperAi : styles.messageWrapperUser}`}
                   >
-                    {msg.text}
+                    <div
+                      className={`${styles.message} ${
+                        msg.sender === "ai" ? styles.messageAi : styles.messageUser
+                      }`}
+                    >
+                      {msg.sender === "ai" ? renderFormattedText(msg.text) : msg.text}
+                    </div>
+                    <span className={styles.timestamp}>{msg.timestamp}</span>
                   </div>
-                  <span className={styles.timestamp}>{msg.timestamp}</span>
-                </div>
-              ))}
+                );
+              })}
+
               {isTyping && (
                 <div className={styles.messageTyping} aria-label="Assistant is typing">
                   <div className={styles.typingDot} />
