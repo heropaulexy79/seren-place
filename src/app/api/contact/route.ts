@@ -19,12 +19,13 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 });
     }
 
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'Seren Place Homecare <info@serenplace.com>';
+    const notificationSender = process.env.RESEND_NOTIFY_FROM || 'Seren Place Form <notifications@serenplace.com>';
+    const clientSender = process.env.RESEND_FROM_EMAIL || 'Seren Place Homecare <info@serenplace.com>';
     const toEmail = process.env.RESEND_TO_EMAIL || 'info@serenplace.com';
 
-    // Send notification email to Seren Place
+    // Send notification email to Seren Place office
     await resend.emails.send({
-      from: fromEmail,
+      from: notificationSender,
       to: [toEmail],
       replyTo: email,
       subject: `New Consultation Request from ${name}`,
@@ -67,7 +68,7 @@ export async function POST(req: Request) {
 
     // Send confirmation email to the client
     await resend.emails.send({
-      from: fromEmail,
+      from: clientSender,
       to: [email],
       replyTo: toEmail,
       subject: 'We Received Your Consultation Request — Seren Place Homecare',
