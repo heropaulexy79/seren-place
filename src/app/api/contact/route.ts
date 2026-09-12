@@ -19,10 +19,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 });
     }
 
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'Seren Place Homecare <info@serenplace.com>';
+    const toEmail = process.env.RESEND_TO_EMAIL || 'info@serenplace.com';
+
     // Send notification email to Seren Place
     await resend.emails.send({
-      from: 'Seren Place Website <onboarding@resend.dev>',
-      to: ['info@serenplace.com'],
+      from: fromEmail,
+      to: [toEmail],
+      replyTo: email,
       subject: `New Consultation Request from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1A2B30;">
@@ -63,8 +67,9 @@ export async function POST(req: Request) {
 
     // Send confirmation email to the client
     await resend.emails.send({
-      from: 'Seren Place Homecare <onboarding@resend.dev>',
+      from: fromEmail,
       to: [email],
+      replyTo: toEmail,
       subject: 'We Received Your Consultation Request — Seren Place Homecare',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1A2B30;">
