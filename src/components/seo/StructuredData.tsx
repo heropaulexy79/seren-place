@@ -38,20 +38,58 @@ const StructuredData = ({ dynamicSchema }: StructuredDataProps) => {
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Seren Place",
+    "@type": ["LocalBusiness", "HomeHealthService"],
+    "name": "Seren Place Homecare",
     "image": "https://serenplace.com/og-image.png",
-    "telePhone": "+1 910-710-7977",
-
+    "telephone": "+1 910-710-7977",
     "email": "info@serenplace.com",
+    "url": "https://serenplace.com",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "",
       "addressLocality": "Charlotte",
       "addressRegion": "NC",
       "postalCode": "28273",
       "addressCountry": "US"
     },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Charlotte Metro Area, NC"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Union County, NC"
+      },
+      {
+        "@type": "City",
+        "name": "Charlotte"
+      },
+      {
+        "@type": "City",
+        "name": "Monroe"
+      },
+      {
+        "@type": "City",
+        "name": "Waxhaw"
+      },
+      {
+        "@type": "City",
+        "name": "Indian Trail"
+      },
+      {
+        "@type": "City",
+        "name": "Weddington"
+      },
+      {
+        "@type": "City",
+        "name": "Matthews"
+      },
+      {
+        "@type": "City",
+        "name": "Stallings"
+      }
+    ],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
