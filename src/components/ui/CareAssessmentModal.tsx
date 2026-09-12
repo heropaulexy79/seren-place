@@ -78,11 +78,29 @@ export default function CareAssessmentModal({ isOpen, onClose }: CareAssessmentM
     }, 300);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here we would typically send data to a backend API
-    console.log("Assessment Data:", { answers, contactInfo });
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: contactInfo.name,
+          phone: contactInfo.phone,
+          email: contactInfo.email,
+          service: answers.type || "Care Assessment Request",
+          message: `Care Assessment Details:\n- Who needs care: ${answers.who || "Not specified"}\n- Service type needed: ${answers.type || "Not specified"}\n- Timeline: ${answers.timeline || "Not specified"}`,
+        }),
+      });
+    } catch (error) {
+      console.error("Failed to send assessment request:", error);
+    } finally {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }
   };
 
   if (!isOpen) return null;
@@ -192,8 +210,8 @@ export default function CareAssessmentModal({ isOpen, onClose }: CareAssessmentM
                           <button type="button" className={styles.backButton} onClick={() => setStep(step - 1)}>
                             Back
                           </button>
-                          <button type="submit" className={styles.submitButton}>
-                            Get Care Plan <ArrowRight size={16} style={{display: 'inline', marginLeft: 8, verticalAlign: 'middle'}}/>
+                          <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
+                            {isSubmitting ? "Submitting..." : <>Get Care Plan <ArrowRight size={16} style={{display: 'inline', marginLeft: 8, verticalAlign: 'middle'}}/></>}
                           </button>
                         </div>
                       </form>
