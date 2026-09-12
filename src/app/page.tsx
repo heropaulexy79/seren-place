@@ -8,7 +8,7 @@ import FAQSection from "@/components/home/FAQSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata = {
-  title: "Seren Place Homecare | Non-Medical Home Care Coming Soon to Charlotte Metro & Union County",
+  title: "Seren Place | Premium Homecare Agency",
   description: "Seren Place Homecare is preparing for our official launch in Charlotte Metro & Union County. Join our client waitlist or apply to join our founding care team.",
 };
 

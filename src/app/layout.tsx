@@ -3,34 +3,38 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://serenplace.com"),
-  title: "Seren Place | Premium Home Healthcare Agency",
-
+  title: "Seren Place | Premium Homecare Agency",
   description: "Experience premium, compassionate, and family-centered home care. Specialized in senior care, dementia care, and companionship to ensure peace of mind for your loved ones always.",
   keywords: ["home healthcare", "senior care", "dementia care", "Alzheimer's care", "in-home care", "respite care"],
   authors: [{ name: "Seren Place" }],
   creator: "Seren Place",
   publisher: "Seren Place",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://serenplace.com",
-    title: "Seren Place | Premium Home Healthcare Agency",
+    title: "Seren Place | Premium Homecare Agency",
     description: "Experience premium, compassionate, and family-centered home care. Specialized in senior care, dementia care, and companionship.",
     siteName: "Seren Place",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Seren Place - Compassionate care for your loved ones",
+        url: "/logo.png",
+        width: 800,
+        height: 800,
+        alt: "Seren Place Logo",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Seren Place | Premium Home Healthcare Agency",
+    card: "summary",
+    title: "Seren Place | Premium Homecare Agency",
     description: "Experience premium, compassionate, and family-centered home care.",
-    images: ["/og-image.png"],
+    images: ["/logo.png"],
     creator: "@serenplace",
   },
   robots: {
