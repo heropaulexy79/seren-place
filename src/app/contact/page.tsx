@@ -63,7 +63,7 @@ export default function ContactPage() {
               <div className={styles.iconWrapper}><Phone size={24} /></div>
               <div>
                 <h3>Call Our Care Team</h3>
-                <p>Available 24/7 for emergency clinical support.</p>
+                <p>Available 24/7 for emergency support.</p>
                 <strong><a href="tel:+19107107977" style={{ color: "var(--primary)" }}>+1 910-710-7977</a></strong>
               </div>
             </div>

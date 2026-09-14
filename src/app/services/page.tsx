@@ -55,7 +55,7 @@ export default function ServicesPage() {
       <div className="container">
         <div className={styles.header}>
           <SectionHeader 
-            title="Specialized Clinical & Personal Care" 
+            title="Premium Specialized Services & Personal Care" 
             subtitle="Our comprehensive care services are designed to provide the highest level of excellence in the comfort of home."
           />
         </div>
